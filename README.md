@@ -1,2 +1,5 @@
-# lib-basics
-a certain number of basic functionalities, linked list, hash, vector, buffer management...
+# TODO
+vector bounds 
+
+hashtable bounds
+
