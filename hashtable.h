@@ -107,7 +107,8 @@ void    hashtable_debug(ps_hashtable p_hashtable) ;
 
 
 /***
- *  override some vector function to disable nb_elements bounds verification
+ * 
+ override some vector function to disable nb_elements bounds verification
  */
 void*    hashtable_vector_element_at(ps_vector p_vector, unsigned int at) ;
 void     hashtable_vector_set_element_at(ps_vector p_vector, void* pv_data, unsigned int at);

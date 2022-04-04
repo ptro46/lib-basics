@@ -117,9 +117,9 @@ typedef struct list s_list ;
  */
 typedef struct list *ps_list ;
 
-void   list_init(ps_list                  p_list ,
-                  bool                    is_sorted,
-                  p_func_list_compare     pf_compare) ;
+void   list_init(ps_list                 p_list ,
+                 bool                    is_sorted,
+                 p_func_list_compare     pf_compare) ;
 
 void   list_free(ps_list p_list);
 

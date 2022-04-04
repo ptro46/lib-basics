@@ -99,6 +99,17 @@ void    hashtable_int_cell_debug(ps_hashtable p_hashtable) ;
 //************
 
 
+//************
+// btree_struct
+void    test_btree_int_cell(void);
+void    test_btree_int_cell_big(void);
+void    test_btree_int_cell_remove(void);
+void    test_btree_int_cell_remove_big(void);
+void    test_btree_int_cell_rebuild(void);
+void    test_btree_rebuild(void);
+// hashtable_struct
+//************
+
 
 #endif /* __TESTS_H__ */
 

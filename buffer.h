@@ -8,6 +8,9 @@
 #ifndef __BUFFER_H__
 #define __BUFFER_H__
 
+#include <stdarg.h>
+#include <stdlib.h>
+
 /**
  * \struct buffer
  * \brief management of a buffer with auto-extension of its size 
