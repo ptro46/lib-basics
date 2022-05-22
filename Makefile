@@ -41,10 +41,3 @@ doc: $(SOURCES) $(HEADERS)
 clean:
 	rm -f $(OBJECTS) $(TARGET) $(EXE) *~ *.bin
 
-send:
-	rsync -aP * nagios:/home/ptro/Lang-C/basics/
-
-debug:
-	cp *.c *.h ~/Documents/xcode/basics/basics/
-	cp tests.c ~/Documents/xcode/basics/basics/main.c
-

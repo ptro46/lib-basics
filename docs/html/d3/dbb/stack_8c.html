@@ -89,7 +89,7 @@ $(document).ready(function(){initNavTree('d3/dbb/stack_8c.html','../../'); initR
 </div><!--header-->
 <div class="contents">
 
-<p>handling a <a class="el" href="../../d3/d19/structLIFO.html" title="stack structure, a stack is a vector with push and pop">LIFO</a> Stack  
+<p>handling a LIFO Stack  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="../../d7/de0/stack_8h_source.html">stack.h</a>&quot;</code><br />
@@ -120,10 +120,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a857c1db18d8fe4eed48d5c84f715529a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dbb/stack_8c.html#a857c1db18d8fe4eed48d5c84f715529a">stack_free</a> (<a class="el" href="../../d7/de0/stack_8h.html#af079046383a5fef8b0804681c7696319">ps_stack_lifo</a> p_stack)</td></tr>
 <tr class="memdesc:a857c1db18d8fe4eed48d5c84f715529a"><td class="mdescLeft">&#160;</td><td class="mdescRight">free a stack, don't free data  <a href="../../d3/dbb/stack_8c.html#a857c1db18d8fe4eed48d5c84f715529a">More...</a><br /></td></tr>
 <tr class="separator:a857c1db18d8fe4eed48d5c84f715529a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7686484c50959dadd4f4800fb972cd96"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dbb/stack_8c.html#a7686484c50959dadd4f4800fb972cd96">stack_to_list</a> (<a class="el" href="../../d7/de0/stack_8h.html#af079046383a5fef8b0804681c7696319">ps_stack_lifo</a> p_stack, <a class="el" href="../../da/d23/list_8h.html#a3867aac062fce9e5e2db67925b9c1c86">ps_list</a> p_list)</td></tr>
+<tr class="memitem:a7686484c50959dadd4f4800fb972cd96"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dbb/stack_8c.html#a7686484c50959dadd4f4800fb972cd96">stack_to_list</a> (<a class="el" href="../../d7/de0/stack_8h.html#af079046383a5fef8b0804681c7696319">ps_stack_lifo</a> p_stack, <a class="el" href="../../d9/d13/btree_8h.html#a3867aac062fce9e5e2db67925b9c1c86">ps_list</a> p_list)</td></tr>
 <tr class="memdesc:a7686484c50959dadd4f4800fb972cd96"><td class="mdescLeft">&#160;</td><td class="mdescRight">convert stack to list  <a href="../../d3/dbb/stack_8c.html#a7686484c50959dadd4f4800fb972cd96">More...</a><br /></td></tr>
 <tr class="separator:a7686484c50959dadd4f4800fb972cd96"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d5a17927f1da8ad3599c3fa1396af12"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dbb/stack_8c.html#a8d5a17927f1da8ad3599c3fa1396af12">stack_to_vector</a> (<a class="el" href="../../d7/de0/stack_8h.html#af079046383a5fef8b0804681c7696319">ps_stack_lifo</a> p_stack, <a class="el" href="../../da/d23/list_8h.html#a8c7c60616641e3610ce4160e562100bd">ps_vector</a> p_vector)</td></tr>
+<tr class="memitem:a8d5a17927f1da8ad3599c3fa1396af12"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dbb/stack_8c.html#a8d5a17927f1da8ad3599c3fa1396af12">stack_to_vector</a> (<a class="el" href="../../d7/de0/stack_8h.html#af079046383a5fef8b0804681c7696319">ps_stack_lifo</a> p_stack, <a class="el" href="../../d9/d13/btree_8h.html#a8c7c60616641e3610ce4160e562100bd">ps_vector</a> p_vector)</td></tr>
 <tr class="memdesc:a8d5a17927f1da8ad3599c3fa1396af12"><td class="mdescLeft">&#160;</td><td class="mdescRight">convert stack to vector  <a href="../../d3/dbb/stack_8c.html#a8d5a17927f1da8ad3599c3fa1396af12">More...</a><br /></td></tr>
 <tr class="separator:a8d5a17927f1da8ad3599c3fa1396af12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32238587eeaea6225c06d84d01e1cae8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dbb/stack_8c.html#a32238587eeaea6225c06d84d01e1cae8">stack_lifo_push</a> (<a class="el" href="../../d7/de0/stack_8h.html#af079046383a5fef8b0804681c7696319">ps_stack_lifo</a> p_stack, void *pv_data)</td></tr>
@@ -152,7 +152,7 @@ Functions</h2></td></tr>
 <tr class="separator:a4f3498b20cfdfe646a475ec7f373c219"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >handling a <a class="el" href="../../d3/d19/structLIFO.html" title="stack structure, a stack is a vector with push and pop">LIFO</a> Stack </p>
+<div class="textblock"><p >handling a LIFO Stack </p>
 <dl class="section author"><dt>Author</dt><dd>Patrice Trognon </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>30 mars 2022 </dd></dl>
@@ -209,11 +209,10 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d3/dbb/stack_8c_aa225a8a6484667fbc91bf55d29742043_icgraph.png" border="0" usemap="#ad3/dbb/stack_8c_aa225a8a6484667fbc91bf55d29742043_icgraph" alt=""/></div>
 <map name="ad3/dbb/stack_8c_aa225a8a6484667fbc91bf55d29742043_icgraph" id="ad3/dbb/stack_8c_aa225a8a6484667fbc91bf55d29742043_icgraph">
-<area shape="rect" title="for each element call pf_func" alt="" coords="275,56,385,83"/>
-<area shape="rect" href="../../da/d48/tests__stack_8c.html#aa20fe4cc1fee9b5738dfcb7ff0b3e13f" title=" " alt="" coords="106,5,225,32"/>
-<area shape="rect" href="../../da/d48/tests__stack_8c.html#aa0905865463b9733f1c14777a20063a1" title=" " alt="" coords="104,56,227,83"/>
-<area shape="rect" href="../../da/d48/tests__stack_8c.html#a16305b71c38cc7fad0379b1697137e28" title=" " alt="" coords="104,107,227,133"/>
-<area shape="rect" href="../../d5/d7f/tests_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,56,56,83"/>
+<area shape="rect" title="for each element call pf_func" alt="" coords="176,56,287,83"/>
+<area shape="rect" href="../../da/d48/tests__stack_8c.html#aa20fe4cc1fee9b5738dfcb7ff0b3e13f" title=" " alt="" coords="7,5,126,32"/>
+<area shape="rect" href="../../da/d48/tests__stack_8c.html#aa0905865463b9733f1c14777a20063a1" title=" " alt="" coords="5,56,128,83"/>
+<area shape="rect" href="../../da/d48/tests__stack_8c.html#a16305b71c38cc7fad0379b1697137e28" title=" " alt="" coords="5,107,128,133"/>
 </map>
 </div>
 
@@ -320,11 +319,10 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d3/dbb/stack_8c_a857c1db18d8fe4eed48d5c84f715529a_icgraph.png" border="0" usemap="#ad3/dbb/stack_8c_a857c1db18d8fe4eed48d5c84f715529a_icgraph" alt=""/></div>
 <map name="ad3/dbb/stack_8c_a857c1db18d8fe4eed48d5c84f715529a_icgraph" id="ad3/dbb/stack_8c_a857c1db18d8fe4eed48d5c84f715529a_icgraph">
-<area shape="rect" title="free a stack, don&#39;t free data" alt="" coords="275,56,357,83"/>
-<area shape="rect" href="../../da/d48/tests__stack_8c.html#aa20fe4cc1fee9b5738dfcb7ff0b3e13f" title=" " alt="" coords="106,5,225,32"/>
-<area shape="rect" href="../../da/d48/tests__stack_8c.html#aa0905865463b9733f1c14777a20063a1" title=" " alt="" coords="104,56,227,83"/>
-<area shape="rect" href="../../da/d48/tests__stack_8c.html#a16305b71c38cc7fad0379b1697137e28" title=" " alt="" coords="104,107,227,133"/>
-<area shape="rect" href="../../d5/d7f/tests_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,56,56,83"/>
+<area shape="rect" title="free a stack, don&#39;t free data" alt="" coords="176,56,259,83"/>
+<area shape="rect" href="../../da/d48/tests__stack_8c.html#aa20fe4cc1fee9b5738dfcb7ff0b3e13f" title=" " alt="" coords="7,5,126,32"/>
+<area shape="rect" href="../../da/d48/tests__stack_8c.html#aa0905865463b9733f1c14777a20063a1" title=" " alt="" coords="5,56,128,83"/>
+<area shape="rect" href="../../da/d48/tests__stack_8c.html#a16305b71c38cc7fad0379b1697137e28" title=" " alt="" coords="5,107,128,133"/>
 </map>
 </div>
 
@@ -380,11 +378,10 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d3/dbb/stack_8c_ad7d8c033758eee3dea76fc48356160d6_icgraph.png" border="0" usemap="#ad3/dbb/stack_8c_ad7d8c033758eee3dea76fc48356160d6_icgraph" alt=""/></div>
 <map name="ad3/dbb/stack_8c_ad7d8c033758eee3dea76fc48356160d6_icgraph" id="ad3/dbb/stack_8c_ad7d8c033758eee3dea76fc48356160d6_icgraph">
-<area shape="rect" title="init one stack" alt="" coords="275,56,353,83"/>
-<area shape="rect" href="../../da/d48/tests__stack_8c.html#aa20fe4cc1fee9b5738dfcb7ff0b3e13f" title=" " alt="" coords="106,5,225,32"/>
-<area shape="rect" href="../../da/d48/tests__stack_8c.html#aa0905865463b9733f1c14777a20063a1" title=" " alt="" coords="104,56,227,83"/>
-<area shape="rect" href="../../da/d48/tests__stack_8c.html#a16305b71c38cc7fad0379b1697137e28" title=" " alt="" coords="104,107,227,133"/>
-<area shape="rect" href="../../d5/d7f/tests_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,56,56,83"/>
+<area shape="rect" title="init one stack" alt="" coords="176,56,255,83"/>
+<area shape="rect" href="../../da/d48/tests__stack_8c.html#aa20fe4cc1fee9b5738dfcb7ff0b3e13f" title=" " alt="" coords="7,5,126,32"/>
+<area shape="rect" href="../../da/d48/tests__stack_8c.html#aa0905865463b9733f1c14777a20063a1" title=" " alt="" coords="5,56,128,83"/>
+<area shape="rect" href="../../da/d48/tests__stack_8c.html#a16305b71c38cc7fad0379b1697137e28" title=" " alt="" coords="5,107,128,133"/>
 </map>
 </div>
 
@@ -469,9 +466,8 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d3/dbb/stack_8c_ab91da8098d3ab96638842ddb2176ff82_icgraph.png" border="0" usemap="#ad3/dbb/stack_8c_ab91da8098d3ab96638842ddb2176ff82_icgraph" alt=""/></div>
 <map name="ad3/dbb/stack_8c_ab91da8098d3ab96638842ddb2176ff82_icgraph" id="ad3/dbb/stack_8c_ab91da8098d3ab96638842ddb2176ff82_icgraph">
-<area shape="rect" title="duplicate last elements in stack" alt="" coords="275,5,381,32"/>
-<area shape="rect" href="../../da/d48/tests__stack_8c.html#aa0905865463b9733f1c14777a20063a1" title=" " alt="" coords="104,5,227,32"/>
-<area shape="rect" href="../../d5/d7f/tests_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,56,32"/>
+<area shape="rect" title="duplicate last elements in stack" alt="" coords="176,5,283,32"/>
+<area shape="rect" href="../../da/d48/tests__stack_8c.html#aa0905865463b9733f1c14777a20063a1" title=" " alt="" coords="5,5,128,32"/>
 </map>
 </div>
 
@@ -548,9 +544,8 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d3/dbb/stack_8c_a2f4a08244492943dd699df976b319e6f_icgraph.png" border="0" usemap="#ad3/dbb/stack_8c_a2f4a08244492943dd699df976b319e6f_icgraph" alt=""/></div>
 <map name="ad3/dbb/stack_8c_a2f4a08244492943dd699df976b319e6f_icgraph" id="ad3/dbb/stack_8c_a2f4a08244492943dd699df976b319e6f_icgraph">
-<area shape="rect" title="pop one element from stack" alt="" coords="275,5,381,32"/>
-<area shape="rect" href="../../da/d48/tests__stack_8c.html#aa0905865463b9733f1c14777a20063a1" title=" " alt="" coords="104,5,227,32"/>
-<area shape="rect" href="../../d5/d7f/tests_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,56,32"/>
+<area shape="rect" title="pop one element from stack" alt="" coords="176,5,283,32"/>
+<area shape="rect" href="../../da/d48/tests__stack_8c.html#aa0905865463b9733f1c14777a20063a1" title=" " alt="" coords="5,5,128,32"/>
 </map>
 </div>
 
@@ -606,11 +601,10 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d3/dbb/stack_8c_a32238587eeaea6225c06d84d01e1cae8_icgraph.png" border="0" usemap="#ad3/dbb/stack_8c_a32238587eeaea6225c06d84d01e1cae8_icgraph" alt=""/></div>
 <map name="ad3/dbb/stack_8c_a32238587eeaea6225c06d84d01e1cae8_icgraph" id="ad3/dbb/stack_8c_a32238587eeaea6225c06d84d01e1cae8_icgraph">
-<area shape="rect" title="push one element to stack" alt="" coords="275,56,388,83"/>
-<area shape="rect" href="../../da/d48/tests__stack_8c.html#aa20fe4cc1fee9b5738dfcb7ff0b3e13f" title=" " alt="" coords="106,5,225,32"/>
-<area shape="rect" href="../../da/d48/tests__stack_8c.html#aa0905865463b9733f1c14777a20063a1" title=" " alt="" coords="104,56,227,83"/>
-<area shape="rect" href="../../da/d48/tests__stack_8c.html#a16305b71c38cc7fad0379b1697137e28" title=" " alt="" coords="104,107,227,133"/>
-<area shape="rect" href="../../d5/d7f/tests_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,56,56,83"/>
+<area shape="rect" title="push one element to stack" alt="" coords="176,56,289,83"/>
+<area shape="rect" href="../../da/d48/tests__stack_8c.html#aa20fe4cc1fee9b5738dfcb7ff0b3e13f" title=" " alt="" coords="7,5,126,32"/>
+<area shape="rect" href="../../da/d48/tests__stack_8c.html#aa0905865463b9733f1c14777a20063a1" title=" " alt="" coords="5,56,128,83"/>
+<area shape="rect" href="../../da/d48/tests__stack_8c.html#a16305b71c38cc7fad0379b1697137e28" title=" " alt="" coords="5,107,128,133"/>
 </map>
 </div>
 
@@ -646,9 +640,8 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d3/dbb/stack_8c_a618ece80f4d8e79ef54578c9e526ffd7_icgraph.png" border="0" usemap="#ad3/dbb/stack_8c_a618ece80f4d8e79ef54578c9e526ffd7_icgraph" alt=""/></div>
 <map name="ad3/dbb/stack_8c_a618ece80f4d8e79ef54578c9e526ffd7_icgraph" id="ad3/dbb/stack_8c_a618ece80f4d8e79ef54578c9e526ffd7_icgraph">
-<area shape="rect" title="swap two last elements in stack" alt="" coords="275,5,391,32"/>
-<area shape="rect" href="../../da/d48/tests__stack_8c.html#aa0905865463b9733f1c14777a20063a1" title=" " alt="" coords="104,5,227,32"/>
-<area shape="rect" href="../../d5/d7f/tests_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,56,32"/>
+<area shape="rect" title="swap two last elements in stack" alt="" coords="176,5,292,32"/>
+<area shape="rect" href="../../da/d48/tests__stack_8c.html#aa0905865463b9733f1c14777a20063a1" title=" " alt="" coords="5,5,128,32"/>
 </map>
 </div>
 
@@ -669,7 +662,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="../../da/d23/list_8h.html#a3867aac062fce9e5e2db67925b9c1c86">ps_list</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d9/d13/btree_8h.html#a3867aac062fce9e5e2db67925b9c1c86">ps_list</a>&#160;</td>
           <td class="paramname"><em>p_list</em>&#160;</td>
         </tr>
         <tr>
@@ -706,10 +699,9 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d3/dbb/stack_8c_a7686484c50959dadd4f4800fb972cd96_icgraph.png" border="0" usemap="#ad3/dbb/stack_8c_a7686484c50959dadd4f4800fb972cd96_icgraph" alt=""/></div>
 <map name="ad3/dbb/stack_8c_a7686484c50959dadd4f4800fb972cd96_icgraph" id="ad3/dbb/stack_8c_a7686484c50959dadd4f4800fb972cd96_icgraph">
-<area shape="rect" title="convert stack to list" alt="" coords="275,31,371,57"/>
-<area shape="rect" href="../../da/d48/tests__stack_8c.html#aa20fe4cc1fee9b5738dfcb7ff0b3e13f" title=" " alt="" coords="106,5,225,32"/>
-<area shape="rect" href="../../da/d48/tests__stack_8c.html#a16305b71c38cc7fad0379b1697137e28" title=" " alt="" coords="104,56,227,83"/>
-<area shape="rect" href="../../d5/d7f/tests_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,31,56,57"/>
+<area shape="rect" title="convert stack to list" alt="" coords="176,31,272,57"/>
+<area shape="rect" href="../../da/d48/tests__stack_8c.html#aa20fe4cc1fee9b5738dfcb7ff0b3e13f" title=" " alt="" coords="7,5,126,32"/>
+<area shape="rect" href="../../da/d48/tests__stack_8c.html#a16305b71c38cc7fad0379b1697137e28" title=" " alt="" coords="5,56,128,83"/>
 </map>
 </div>
 
@@ -730,7 +722,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="../../da/d23/list_8h.html#a8c7c60616641e3610ce4160e562100bd">ps_vector</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d9/d13/btree_8h.html#a8c7c60616641e3610ce4160e562100bd">ps_vector</a>&#160;</td>
           <td class="paramname"><em>p_vector</em>&#160;</td>
         </tr>
         <tr>
@@ -767,10 +759,9 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d3/dbb/stack_8c_a8d5a17927f1da8ad3599c3fa1396af12_icgraph.png" border="0" usemap="#ad3/dbb/stack_8c_a8d5a17927f1da8ad3599c3fa1396af12_icgraph" alt=""/></div>
 <map name="ad3/dbb/stack_8c_a8d5a17927f1da8ad3599c3fa1396af12_icgraph" id="ad3/dbb/stack_8c_a8d5a17927f1da8ad3599c3fa1396af12_icgraph">
-<area shape="rect" title="convert stack to vector" alt="" coords="275,31,389,57"/>
-<area shape="rect" href="../../da/d48/tests__stack_8c.html#aa20fe4cc1fee9b5738dfcb7ff0b3e13f" title=" " alt="" coords="106,5,225,32"/>
-<area shape="rect" href="../../da/d48/tests__stack_8c.html#a16305b71c38cc7fad0379b1697137e28" title=" " alt="" coords="104,56,227,83"/>
-<area shape="rect" href="../../d5/d7f/tests_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,31,56,57"/>
+<area shape="rect" title="convert stack to vector" alt="" coords="176,31,291,57"/>
+<area shape="rect" href="../../da/d48/tests__stack_8c.html#aa20fe4cc1fee9b5738dfcb7ff0b3e13f" title=" " alt="" coords="7,5,126,32"/>
+<area shape="rect" href="../../da/d48/tests__stack_8c.html#a16305b71c38cc7fad0379b1697137e28" title=" " alt="" coords="5,56,128,83"/>
 </map>
 </div>
 
@@ -782,7 +773,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d3/dbb/stack_8c.html">stack.c</a></li>
-    <li class="footer">Generated on Sun Mar 27 2022 11:06:51 for Basics Library by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+    <li class="footer">Generated on Sun May 22 2022 17:15:56 for Basics Library by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
   </ul>
 </div>
 </body>

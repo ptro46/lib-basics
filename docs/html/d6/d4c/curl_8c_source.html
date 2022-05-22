@@ -136,27 +136,27 @@ $(document).ready(function(){initNavTree('d6/d4c/curl_8c_source.html','../../');
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <a class="code hl_struct" href="../../dd/da2/structbuffer.html">ps_buffer</a>  p_buffer ;</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    len = curl_data_size * curl_data_nmemb ;</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    p_buffer = (<a class="code hl_typedef" href="../../d5/d08/buffer_8h.html#a60dbfd5b960da64e1e2139994015bc64">ps_buffer</a>) udata ;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    p_buffer = (<a class="code hl_typedef" href="../../d9/d13/btree_8h.html#a60dbfd5b960da64e1e2139994015bc64">ps_buffer</a>) udata ;</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <a class="code hl_function" href="../../d3/d8b/buffer_8c.html#a9fe60356410701ea1c4b1bd1178274f3">buffer_append</a>(p_buffer, pv_curl_data, len);</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keywordflow">return</span> len;</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>}</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="ttc" id="abtree_8h_html_a60dbfd5b960da64e1e2139994015bc64"><div class="ttname"><a href="../../d9/d13/btree_8h.html#a60dbfd5b960da64e1e2139994015bc64">ps_buffer</a></div><div class="ttdeci">struct buffer * ps_buffer</div><div class="ttdoc">forward declaration</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d13/btree_8h_source.html#l00027">btree.h:27</a></div></div>
 <div class="ttc" id="abuffer_8c_html_a9fe60356410701ea1c4b1bd1178274f3"><div class="ttname"><a href="../../d3/d8b/buffer_8c.html#a9fe60356410701ea1c4b1bd1178274f3">buffer_append</a></div><div class="ttdeci">void buffer_append(ps_buffer p_buffer, const void *data, size_t len)</div><div class="ttdoc">append the data of size len at the end of the buffer</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d8b/buffer_8c_source.html#l00100">buffer.c:100</a></div></div>
-<div class="ttc" id="abuffer_8h_html_a60dbfd5b960da64e1e2139994015bc64"><div class="ttname"><a href="../../d5/d08/buffer_8h.html#a60dbfd5b960da64e1e2139994015bc64">ps_buffer</a></div><div class="ttdeci">struct buffer * ps_buffer</div><div class="ttdoc">pointer to buffer</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d08/buffer_8h_source.html#l00031">buffer.h:31</a></div></div>
 <div class="ttc" id="acurl_8c_html_a398643cdac3a156bcc7411a89a3e4833"><div class="ttname"><a href="../../d6/d4c/curl_8c.html#a398643cdac3a156bcc7411a89a3e4833">curl_execute_timeout</a></div><div class="ttdeci">u_int16_t curl_execute_timeout</div><div class="ttdoc">libcurl network timeout</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d4c/curl_8c_source.html#l00026">curl.c:26</a></div></div>
 <div class="ttc" id="acurl_8c_html_a6bb5977b006f5cac1493dec2b272e8c8"><div class="ttname"><a href="../../d6/d4c/curl_8c.html#a6bb5977b006f5cac1493dec2b272e8c8">curl_to_buffer</a></div><div class="ttdeci">size_t curl_to_buffer(void *pv_curl_data, size_t curl_data_size, size_t curl_data_nmemb, void *udata)</div><div class="ttdoc">callback used by libcurl to append received datas to struct s_buffer</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d4c/curl_8c_source.html#l00083">curl.c:83</a></div></div>
 <div class="ttc" id="acurl_8c_html_ad261ea68cb293c216207564240bc5c49"><div class="ttname"><a href="../../d6/d4c/curl_8c.html#ad261ea68cb293c216207564240bc5c49">curl_execute</a></div><div class="ttdeci">int curl_execute(const char *psz_url, ps_buffer p_buffer)</div><div class="ttdoc">execution of a GET by libcurl</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d4c/curl_8c_source.html#l00036">curl.c:36</a></div></div>
 <div class="ttc" id="acurl_8h_html"><div class="ttname"><a href="../../d2/dd2/curl_8h.html">curl.h</a></div><div class="ttdoc">libcurl calls</div></div>
 <div class="ttc" id="acurl_8h_html_ab1008de6c3c56ed63b5a5c6ebb0cab7c"><div class="ttname"><a href="../../d2/dd2/curl_8h.html#ab1008de6c3c56ed63b5a5c6ebb0cab7c">CURL_EXECUTE_TIMEOUT</a></div><div class="ttdeci">#define CURL_EXECUTE_TIMEOUT</div><div class="ttdoc">libcurl network timeout</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/dd2/curl_8h_source.html#l00017">curl.h:17</a></div></div>
-<div class="ttc" id="astructbuffer_html"><div class="ttname"><a href="../../dd/da2/structbuffer.html">buffer</a></div><div class="ttdoc">management of a buffer with auto-extension of its size</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d08/buffer_8h_source.html#l00015">buffer.h:15</a></div></div>
+<div class="ttc" id="astructbuffer_html"><div class="ttname"><a href="../../dd/da2/structbuffer.html">buffer</a></div><div class="ttdoc">management of a buffer with auto-extension of its size</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d08/buffer_8h_source.html#l00018">buffer.h:18</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d6/d4c/curl_8c.html">curl.c</a></li>
-    <li class="footer">Generated on Sun Mar 27 2022 11:06:51 for Basics Library by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+    <li class="footer">Generated on Sun May 22 2022 17:15:55 for Basics Library by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
   </ul>
 </div>
 </body>

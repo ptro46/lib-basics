@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['vector_0',['vector',['../d4/db4/structvector.html',1,'']]]
+  ['stack_5flifo_0',['stack_lifo',['../dc/da3/structstack__lifo.html',1,'']]]
 ];

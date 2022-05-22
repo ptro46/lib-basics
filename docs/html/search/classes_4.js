@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['stack_5flifo_0',['stack_lifo',['../dc/da3/structstack__lifo.html',1,'']]]
+  ['list_0',['list',['../d8/d10/structlist.html',1,'']]],
+  ['list_5fdata_1',['list_data',['../da/d28/structlist__data.html',1,'']]]
 ];

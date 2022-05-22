@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['buffer_0',['buffer',['../dd/da2/structbuffer.html',1,'']]]
+  ['btree_0',['btree',['../db/dc2/structbtree.html',1,'']]],
+  ['buffer_1',['buffer',['../dd/da2/structbuffer.html',1,'']]]
 ];

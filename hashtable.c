@@ -17,7 +17,6 @@ void            hashtable_debug_dump_vector_entries(unsigned int index, const vo
 void            hashtable_free_vector_kv(unsigned int index, const void* p_kv) ;
 void            hashtable_free_vector_entries(unsigned int index, const void* pv_vector_of_values) ;
 
-
 /**
  * \fn default_hash_func(void* pv_data, size_t size)
  * \brief calculate key hash as sum of array of bytes, this is default hash function can by override

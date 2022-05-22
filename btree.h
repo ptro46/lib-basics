@@ -161,7 +161,7 @@ typedef void            (*p_func_key_to_string)(const void *pv_key, ps_buffer p_
 typedef void            (*p_func_key_to_string_psz)(const void *pv_key, char* p_buffer);
 
 /**
- * \fn (*p_func_value_to_string)(const void *pv_key, ps_buffer p_buffer)
+ * \fn (*p_func_value_to_string)(const void *pv_value, ps_buffer p_buffer)
  * \brief callback used dump pv_key to string (used for debug)
  *
  * \param pv_value pointer value

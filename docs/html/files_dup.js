@@ -1,6 +1,8 @@
 var files_dup =
 [
     [ "b_types.h", "db/dc1/b__types_8h.html", "db/dc1/b__types_8h" ],
+    [ "btree.c", "dc/db7/btree_8c.html", "dc/db7/btree_8c" ],
+    [ "btree.h", "d9/d13/btree_8h.html", "d9/d13/btree_8h" ],
     [ "buffer.c", "d3/d8b/buffer_8c.html", "d3/d8b/buffer_8c" ],
     [ "buffer.h", "d5/d08/buffer_8h.html", "d5/d08/buffer_8h" ],
     [ "curl.c", "d6/d4c/curl_8c.html", "d6/d4c/curl_8c" ],
@@ -15,6 +17,7 @@ var files_dup =
     [ "strl.h", "d4/d49/strl_8h.html", "d4/d49/strl_8h" ],
     [ "tests.c", "d5/d7f/tests_8c.html", "d5/d7f/tests_8c" ],
     [ "tests.h", "dc/d20/tests_8h.html", "dc/d20/tests_8h" ],
+    [ "tests_btree.c", "db/db5/tests__btree_8c.html", "db/db5/tests__btree_8c" ],
     [ "tests_buffer.c", "d7/d4c/tests__buffer_8c.html", "d7/d4c/tests__buffer_8c" ],
     [ "tests_hashtable.c", "d6/d55/tests__hashtable_8c.html", "d6/d55/tests__hashtable_8c" ],
     [ "tests_lists.c", "d0/dae/tests__lists_8c.html", "d0/dae/tests__lists_8c" ],

@@ -89,48 +89,107 @@ $(document).ready(function(){initNavTree('d5/d7f/tests_8c_source.html','../../')
 <a href="../../d5/d7f/tests_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;string.h&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="../../dc/d20/tests_8h.html">tests.h</a>&quot;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="../../d5/d7f/tests_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">    6</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="../../d5/d7f/tests_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>** argv) {</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <a class="code hl_function" href="../../dc/d20/tests_8h.html#ac0f63cf640df8368211eb5ca12bee7e7">test_buffer</a>();    </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <a class="code hl_function" href="../../dc/d20/tests_8h.html#a9e255bcabbcf9d29db307aa1ebea6d83">test_list</a>() ;</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <a class="code hl_function" href="../../dc/d20/tests_8h.html#a396c4f9dd52f7beb95147570ab041e95">test_list_bounds</a>();</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <a class="code hl_function" href="../../dc/d20/tests_8h.html#a0a79d84fd8c912c59764623017ca7a14">test_list_sorted</a>();</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <a class="code hl_function" href="../../dc/d20/tests_8h.html#a85d8fcc66fb99ff9a4533f662e654bbc">test_list_data_sorted</a>();</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <a class="code hl_function" href="../../dc/d20/tests_8h.html#afe0fd18c3bb5ffa325d918dedaa3b768">test_list_copy</a>();</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <a class="code hl_function" href="../../dc/d20/tests_8h.html#abb68c0254cedd1857d7e88ea3dea25d6">test_vector_string</a>();</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <a class="code hl_function" href="../../dc/d20/tests_8h.html#a8fa0b40b8858302d98b783103e6d8d2e">test_vector_copy</a>();</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <a class="code hl_function" href="../../dc/d20/tests_8h.html#a31c782dd2d43a1ce777d8dbdff35e742">test_vector_struct</a>();</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <a class="code hl_function" href="../../dc/d20/tests_8h.html#aa0905865463b9733f1c14777a20063a1">test_stack_string</a>();</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <a class="code hl_function" href="../../dc/d20/tests_8h.html#aa20fe4cc1fee9b5738dfcb7ff0b3e13f">test_stack_copy</a>();</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <a class="code hl_function" href="../../dc/d20/tests_8h.html#a16305b71c38cc7fad0379b1697137e28">test_stack_struct</a>();</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <a class="code hl_function" href="../../dc/d20/tests_8h.html#ab351863bfa925d198591857a5925ee81">test_hashtable_string_string</a>();</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <a class="code hl_function" href="../../dc/d20/tests_8h.html#a40e9473700e1dd1f15845674a851f9c3">test_hashtable_int_cell</a>();    </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>}</div>
-<div class="ttc" id="atests_8c_html_a3c04138a5bfe5d72780bb7e82a18e627"><div class="ttname"><a href="../../d5/d7f/tests_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></div><div class="ttdeci">int main(int argc, char **argv)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7f/tests_8c_source.html#l00006">tests.c:6</a></div></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;math.h&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="../../dc/d20/tests_8h.html">tests.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keywordtype">void</span>    <a class="code hl_function" href="../../d5/d7f/tests_8c.html#a1b9a9158df9173e57b35b430b2d2a965">test_rebuild_with_pivot</a>(<a class="code hl_struct" href="../../d4/db4/structvector.html">ps_vector</a> p_vector_of_kv, <span class="keywordtype">int</span> index_min, <span class="keywordtype">int</span> index_max) ;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="../../d5/d7f/tests_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">    9</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="../../d5/d7f/tests_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>** argv) {</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="comment">/*</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">      test_buffer();</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">      test_list();</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">      test_list_bounds();</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">      test_list_sorted();</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">      test_list_data_sorted();</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">      test_list_copy();</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">      test_vector_string();</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">      test_vector_copy();</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">      test_vector_struct();</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">      test_stack_string();</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">      test_stack_copy();</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">      test_stack_struct();</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">      test_hashtable_string_string();</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">      test_hashtable_int_cell();</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">    */</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">//    test_btree_int_cell();</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">//    test_btree_int_cell_big();</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">//    test_btree_int_cell_remove();</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">//    test_btree_int_cell_remove_big();</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">//    test_btree_int_cell_rebuild();</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <a class="code hl_function" href="../../dc/d20/tests_8h.html#a1ab0a64cc70a610a74ed8babbbfaf4d7">test_btree_rebuild</a>();</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="comment">/*</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">    s_h_int        values[] = {</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">        { 1 },</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">        { 2 },</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">        { 3 },</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">        { 4 },</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">        { 5 },</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">        { 6 },</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">        { 7 },</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment">        { 8 },</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment">        { 9 },</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">        { 10 }</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment">    } ;</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment"></span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment">    s_vector v_of_kv ;</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment"></span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment">    int nb_elems = sizeof(values) / sizeof(s_h_int) ;</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment">    vector_init(&amp;v_of_kv, nb_elems);</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment">    for(int i=0;i&lt;nb_elems;i++) {</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment">        vector_add_element(&amp;v_of_kv, &amp;values[i]);</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="comment">    }</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="comment"></span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment">    test_rebuild_with_pivot(&amp;v_of_kv, 0, nb_elems-1);</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment">    printf(&quot;\n&quot;);</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">    vector_free(&amp;v_of_kv);</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment">    */</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>}</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="../../d5/d7f/tests_8c.html#a1b9a9158df9173e57b35b430b2d2a965">   62</a></span><span class="keywordtype">void</span>    <a class="code hl_function" href="../../d5/d7f/tests_8c.html#a1b9a9158df9173e57b35b430b2d2a965">test_rebuild_with_pivot</a>(<a class="code hl_struct" href="../../d4/db4/structvector.html">ps_vector</a> p_vector_of_kv, <span class="keywordtype">int</span> index_min, <span class="keywordtype">int</span> index_max) {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <a class="code hl_struct" href="../../d0/d11/structh__int.html">ps_h_int</a> p_kv ;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordtype">int</span> sample_size = index_max - index_min + 1 ;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordtype">int</span> pivot = 0 ;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordflow">if</span> ( sample_size == 1 ) {</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        p_kv = <a class="code hl_function" href="../../df/dfa/vector_8c.html#a2677988b5ee1760926ddea0095287852">vector_element_at</a>(p_vector_of_kv, index_min);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        printf(<span class="stringliteral">&quot;%d &quot;</span>,p_kv-&gt;<a class="code hl_variable" href="../../d0/d11/structh__int.html#a27a8aac6829185a5bf579efc2ecb9f16">idx</a>);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( sample_size == 2 ) {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        p_kv = <a class="code hl_function" href="../../df/dfa/vector_8c.html#a2677988b5ee1760926ddea0095287852">vector_element_at</a>(p_vector_of_kv, index_max);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        printf(<span class="stringliteral">&quot;%d &quot;</span>,p_kv-&gt;<a class="code hl_variable" href="../../d0/d11/structh__int.html#a27a8aac6829185a5bf579efc2ecb9f16">idx</a>);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        p_kv = <a class="code hl_function" href="../../df/dfa/vector_8c.html#a2677988b5ee1760926ddea0095287852">vector_element_at</a>(p_vector_of_kv, index_min);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        printf(<span class="stringliteral">&quot;%d &quot;</span>,p_kv-&gt;<a class="code hl_variable" href="../../d0/d11/structh__int.html#a27a8aac6829185a5bf579efc2ecb9f16">idx</a>);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        pivot = (int)sample_size / 2 ;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        p_kv = <a class="code hl_function" href="../../df/dfa/vector_8c.html#a2677988b5ee1760926ddea0095287852">vector_element_at</a>(p_vector_of_kv, index_min + pivot);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        printf(<span class="stringliteral">&quot;%d &quot;</span>,p_kv-&gt;<a class="code hl_variable" href="../../d0/d11/structh__int.html#a27a8aac6829185a5bf579efc2ecb9f16">idx</a>);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        <a class="code hl_function" href="../../d5/d7f/tests_8c.html#a1b9a9158df9173e57b35b430b2d2a965">test_rebuild_with_pivot</a>(p_vector_of_kv, index_min, index_min + pivot - 1);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        <a class="code hl_function" href="../../d5/d7f/tests_8c.html#a1b9a9158df9173e57b35b430b2d2a965">test_rebuild_with_pivot</a>(p_vector_of_kv, index_min + pivot + 1, index_max);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    }</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>}</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="ttc" id="astructh__int_html"><div class="ttname"><a href="../../d0/d11/structh__int.html">h_int</a></div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d20/tests_8h_source.html#l00088">tests.h:88</a></div></div>
+<div class="ttc" id="astructh__int_html_a27a8aac6829185a5bf579efc2ecb9f16"><div class="ttname"><a href="../../d0/d11/structh__int.html#a27a8aac6829185a5bf579efc2ecb9f16">h_int::idx</a></div><div class="ttdeci">int idx</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d20/tests_8h_source.html#l00089">tests.h:89</a></div></div>
+<div class="ttc" id="astructvector_html"><div class="ttname"><a href="../../d4/db4/structvector.html">vector</a></div><div class="ttdoc">vector structure</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d68/vector_8h_source.html#l00055">vector.h:55</a></div></div>
+<div class="ttc" id="atests_8c_html_a1b9a9158df9173e57b35b430b2d2a965"><div class="ttname"><a href="../../d5/d7f/tests_8c.html#a1b9a9158df9173e57b35b430b2d2a965">test_rebuild_with_pivot</a></div><div class="ttdeci">void test_rebuild_with_pivot(ps_vector p_vector_of_kv, int index_min, int index_max)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7f/tests_8c_source.html#l00062">tests.c:62</a></div></div>
+<div class="ttc" id="atests_8c_html_a3c04138a5bfe5d72780bb7e82a18e627"><div class="ttname"><a href="../../d5/d7f/tests_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></div><div class="ttdeci">int main(int argc, char **argv)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7f/tests_8c_source.html#l00009">tests.c:9</a></div></div>
 <div class="ttc" id="atests_8h_html"><div class="ttname"><a href="../../dc/d20/tests_8h.html">tests.h</a></div></div>
-<div class="ttc" id="atests_8h_html_a0a79d84fd8c912c59764623017ca7a14"><div class="ttname"><a href="../../dc/d20/tests_8h.html#a0a79d84fd8c912c59764623017ca7a14">test_list_sorted</a></div><div class="ttdeci">void test_list_sorted(void)</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/dae/tests__lists_8c_source.html#l00115">tests_lists.c:115</a></div></div>
-<div class="ttc" id="atests_8h_html_a16305b71c38cc7fad0379b1697137e28"><div class="ttname"><a href="../../dc/d20/tests_8h.html#a16305b71c38cc7fad0379b1697137e28">test_stack_struct</a></div><div class="ttdeci">void test_stack_struct(void)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d48/tests__stack_8c_source.html#l00106">tests_stack.c:106</a></div></div>
-<div class="ttc" id="atests_8h_html_a31c782dd2d43a1ce777d8dbdff35e742"><div class="ttname"><a href="../../dc/d20/tests_8h.html#a31c782dd2d43a1ce777d8dbdff35e742">test_vector_struct</a></div><div class="ttdeci">void test_vector_struct(void)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d5a/tests__vector_8c_source.html#l00123">tests_vector.c:123</a></div></div>
-<div class="ttc" id="atests_8h_html_a396c4f9dd52f7beb95147570ab041e95"><div class="ttname"><a href="../../dc/d20/tests_8h.html#a396c4f9dd52f7beb95147570ab041e95">test_list_bounds</a></div><div class="ttdeci">void test_list_bounds(void)</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/dae/tests__lists_8c_source.html#l00177">tests_lists.c:177</a></div></div>
-<div class="ttc" id="atests_8h_html_a40e9473700e1dd1f15845674a851f9c3"><div class="ttname"><a href="../../dc/d20/tests_8h.html#a40e9473700e1dd1f15845674a851f9c3">test_hashtable_int_cell</a></div><div class="ttdeci">void test_hashtable_int_cell(void)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d55/tests__hashtable_8c_source.html#l00183">tests_hashtable.c:183</a></div></div>
-<div class="ttc" id="atests_8h_html_a85d8fcc66fb99ff9a4533f662e654bbc"><div class="ttname"><a href="../../dc/d20/tests_8h.html#a85d8fcc66fb99ff9a4533f662e654bbc">test_list_data_sorted</a></div><div class="ttdeci">void test_list_data_sorted(void)</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/dae/tests__lists_8c_source.html#l00006">tests_lists.c:6</a></div></div>
-<div class="ttc" id="atests_8h_html_a8fa0b40b8858302d98b783103e6d8d2e"><div class="ttname"><a href="../../dc/d20/tests_8h.html#a8fa0b40b8858302d98b783103e6d8d2e">test_vector_copy</a></div><div class="ttdeci">void test_vector_copy(void)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d5a/tests__vector_8c_source.html#l00074">tests_vector.c:74</a></div></div>
-<div class="ttc" id="atests_8h_html_a9e255bcabbcf9d29db307aa1ebea6d83"><div class="ttname"><a href="../../dc/d20/tests_8h.html#a9e255bcabbcf9d29db307aa1ebea6d83">test_list</a></div><div class="ttdeci">void test_list(void)</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/dae/tests__lists_8c_source.html#l00235">tests_lists.c:235</a></div></div>
-<div class="ttc" id="atests_8h_html_aa0905865463b9733f1c14777a20063a1"><div class="ttname"><a href="../../dc/d20/tests_8h.html#aa0905865463b9733f1c14777a20063a1">test_stack_string</a></div><div class="ttdeci">void test_stack_string(void)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d48/tests__stack_8c_source.html#l00008">tests_stack.c:8</a></div></div>
-<div class="ttc" id="atests_8h_html_aa20fe4cc1fee9b5738dfcb7ff0b3e13f"><div class="ttname"><a href="../../dc/d20/tests_8h.html#aa20fe4cc1fee9b5738dfcb7ff0b3e13f">test_stack_copy</a></div><div class="ttdeci">void test_stack_copy(void)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d48/tests__stack_8c_source.html#l00053">tests_stack.c:53</a></div></div>
-<div class="ttc" id="atests_8h_html_ab351863bfa925d198591857a5925ee81"><div class="ttname"><a href="../../dc/d20/tests_8h.html#ab351863bfa925d198591857a5925ee81">test_hashtable_string_string</a></div><div class="ttdeci">void test_hashtable_string_string(void)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d55/tests__hashtable_8c_source.html#l00019">tests_hashtable.c:19</a></div></div>
-<div class="ttc" id="atests_8h_html_abb68c0254cedd1857d7e88ea3dea25d6"><div class="ttname"><a href="../../dc/d20/tests_8h.html#abb68c0254cedd1857d7e88ea3dea25d6">test_vector_string</a></div><div class="ttdeci">void test_vector_string(void)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d5a/tests__vector_8c_source.html#l00016">tests_vector.c:16</a></div></div>
-<div class="ttc" id="atests_8h_html_ac0f63cf640df8368211eb5ca12bee7e7"><div class="ttname"><a href="../../dc/d20/tests_8h.html#ac0f63cf640df8368211eb5ca12bee7e7">test_buffer</a></div><div class="ttdeci">void test_buffer(void)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d4c/tests__buffer_8c_source.html#l00006">tests_buffer.c:6</a></div></div>
-<div class="ttc" id="atests_8h_html_afe0fd18c3bb5ffa325d918dedaa3b768"><div class="ttname"><a href="../../dc/d20/tests_8h.html#afe0fd18c3bb5ffa325d918dedaa3b768">test_list_copy</a></div><div class="ttdeci">void test_list_copy(void)</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/dae/tests__lists_8c_source.html#l00036">tests_lists.c:36</a></div></div>
+<div class="ttc" id="atests_8h_html_a1ab0a64cc70a610a74ed8babbbfaf4d7"><div class="ttname"><a href="../../dc/d20/tests_8h.html#a1ab0a64cc70a610a74ed8babbbfaf4d7">test_btree_rebuild</a></div><div class="ttdeci">void test_btree_rebuild(void)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/db5/tests__btree_8c_source.html#l00597">tests_btree.c:597</a></div></div>
+<div class="ttc" id="avector_8c_html_a2677988b5ee1760926ddea0095287852"><div class="ttname"><a href="../../df/dfa/vector_8c.html#a2677988b5ee1760926ddea0095287852">vector_element_at</a></div><div class="ttdeci">void * vector_element_at(ps_vector p_vector, unsigned int at)</div><div class="ttdoc">get element at index</div><div class="ttdef"><b>Definition:</b> <a href="../../df/dfa/vector_8c_source.html#l00200">vector.c:200</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d5/d7f/tests_8c.html">tests.c</a></li>
-    <li class="footer">Generated on Sun Mar 27 2022 11:06:51 for Basics Library by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+    <li class="footer">Generated on Sun May 22 2022 17:15:55 for Basics Library by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
   </ul>
 </div>
 </body>

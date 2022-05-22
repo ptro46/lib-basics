@@ -40,7 +40,7 @@ typedef void   (*p_func_stack_for_each_callback)(unsigned int, const void*);
 typedef void   (*p_func_stack_for_each_with_param_callback)(unsigned int, const void*, const void*, const void*);
 
 /**
- * \struct LIFO stack
+ * \struct stack_lifo
  * \brief stack structure, a stack is a vector with push and pop
  */
 struct stack_lifo {

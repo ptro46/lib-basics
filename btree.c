@@ -8,27 +8,12 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+
+#include "strl.h"
 #include "btree.h"
 #include "list.h"
 #include "vector.h"
 #include "buffer.h"
-
-/*
-struct tree_node {
-    void*                pv_key;
-    void*                pv_value;
-    struct tree_node*    p_node_parent;
-    struct tree_node*    p_node_left;
-    struct tree_node*    p_node_right;
-} ;
-
-struct btree {
-    ps_tree_node             p_node_root;
-    unsigned int             nb_elements;
-    unsigned int             tree_depth;
-    p_func_btree_compare_key pf_comp;
-} ;
-*/
 
 static ps_tree_node node_alloc_init(ps_tree_node p_parent, void* pv_key, void* pv_value);
 static ps_tree_node btree_search_parent(ps_btree p_tree, ps_tree_node p_node, void* pv_key) ;
@@ -65,6 +50,17 @@ static void    callback_for_each_vector_free(unsigned int index, const void* pv_
 
 static void    btree_rebuild_with_pivot(ps_btree p_tree, ps_vector p_vector_of_kv, int index_min, int index_max) ;
 
+
+/**
+ * \fn btree_node_to_dot(ps_tree_node p_node, ps_buffer p_buffer_nodes, ps_buffer p_buffer_edges, p_func_key_to_string pf_key_string, p_func_value_to_string pf_value_string)
+ * \brief convert a node of type btree to graphviz/dot format
+ *
+ * \param p_node pointer to struct tree_node to convert to dot format
+ * \param p_buffer_nodes buffer contains dot nodes
+ * \param p_buffer_edges buffer contains dot edges
+ * \param pf_key_string callback to convert a key to string
+ * \param pf_value_string callback to convert a value to string
+ */
 void    btree_node_to_dot(ps_tree_node             p_node,
                           ps_buffer                p_buffer_nodes,
                           ps_buffer                p_buffer_edges,
@@ -140,6 +136,15 @@ void    btree_node_to_dot(ps_tree_node             p_node,
     buffer_free(&buf_right_node_key);
 }
 
+/**
+ * \fn btree_to_dot(ps_btree p_tree, const char* dot_filename, p_func_key_to_string pf_key_string, p_func_value_to_string pf_value_string)
+ * \brief convert a btree to graphviz/dot format
+ *
+ * \param p_tree struct btree pointer
+ * \param dot_filename dot filename
+ * \param pf_key_string callback to convert a key to string
+ * \param pf_value_string callback to convert a value to string
+ */
 void    btree_to_dot(ps_btree                 p_tree,
                      const char*              dot_filename,
                      p_func_key_to_string     pf_key_string,
@@ -170,6 +175,13 @@ void    btree_to_dot(ps_btree                 p_tree,
     buffer_free(&buffer_nodes);
 }
 
+/**
+ * \fn btree_init(ps_btree p_tree, p_func_btree_compare_key pf_comp)
+ * \brief init a btree struct
+ *
+ * \param p_tree struct btree pointer
+ * \param pf_comp callback used to compare 2 keys
+ */
 void
 btree_init(ps_btree p_tree, p_func_btree_compare_key pf_comp) {
     if ( p_tree != NULL ) {
@@ -180,6 +192,12 @@ btree_init(ps_btree p_tree, p_func_btree_compare_key pf_comp) {
     }
 }
 
+/**
+ * \fn btree_free(ps_btree p_tree)
+ * \brief free a btree struct
+ *
+ * \param p_tree struct btree pointer
+ */
 void
 btree_free(ps_btree p_tree) {
     if ( p_tree != NULL && p_tree->p_node_root != NULL ) {
@@ -187,6 +205,14 @@ btree_free(ps_btree p_tree) {
     }
 }
 
+/**
+ * \fn btree_put(ps_btree p_tree, void* pv_key, void* pv_value)
+ * \brief put a new key,value
+ *
+ * \param p_tree struct btree pointer
+ * \param pv_key pointer to key
+ * \param pv_value pointer to value
+ */
 void
 btree_put(ps_btree p_tree, void* pv_key, void* pv_value) {
     if ( p_tree != NULL ) {
@@ -214,6 +240,14 @@ btree_put(ps_btree p_tree, void* pv_key, void* pv_value) {
     }
 }
 
+/**
+ * \fn btree_get(ps_btree p_tree, void* pv_key)
+ * \brief return value from key
+ *
+ * \param p_tree struct btree pointer
+ * \param pv_key pointer to key
+ * \return pointer to value, NULL if not found
+ */
 void*
 btree_get(ps_btree p_tree, void* pv_key) {
     if ( p_tree != NULL && p_tree->p_node_root != NULL ) {
@@ -225,18 +259,40 @@ btree_get(ps_btree p_tree, void* pv_key) {
     return NULL ;
 }
 
+/**
+ * \fn btree_keys(ps_btree p_tree, ps_vector p_vector_keys)
+ * \brief return a vector of all keys
+ *
+ * \param p_tree struct btree pointer
+ * \param p_vector_keys pointer to vector filled with all keys
+ */
 void
 btree_keys(ps_btree p_tree, ps_vector p_vector_keys) {
     if ( p_tree != NULL ) {
     }
 }
 
+/**
+ * \fn btree_values(ps_btree p_tree, ps_vector p_vector_values)
+ * \brief return a vector of all values
+ *
+ * \param p_tree struct btree pointer
+ * \param p_vector_values pointer to vector filled with all values
+ */
 void
 btree_values(ps_btree p_tree, ps_vector p_vector_values) {
     if ( p_tree != NULL ) {
     }
 }
 
+/**
+ * \fn btree_search_greater(ps_btree p_tree, ps_tree_node p_node)
+ * \brief find greater node
+ *
+ * \param p_tree struct btree pointer
+ * \param p_node current node
+ * \return pointer to greater node
+ */
 static ps_tree_node
 btree_search_greater(ps_btree p_tree, ps_tree_node p_node) {
     if ( p_node->p_node_right != NULL ) {
@@ -245,8 +301,13 @@ btree_search_greater(ps_btree p_tree, ps_tree_node p_node) {
     return p_node ;
 }
 
-#include "tests.h"
-
+/**
+ * \fn btree_remove_key(ps_btree p_tree, void* pv_key)
+ * \brief remove node by key
+ *
+ * \param p_tree struct btree pointer
+ * \param pv_key pointer to key
+ */
 void
 btree_remove_key(ps_btree p_tree, void* pv_key) {
     if ( p_tree != NULL && p_tree->p_node_root != NULL ) {
@@ -367,6 +428,13 @@ btree_remove_key(ps_btree p_tree, void* pv_key) {
     }
 }
 
+/**
+ * \fn btree_foreach_infix(ps_btree p_tree, p_func_btree_for_each pf_func)
+ * \brief infixed path of a tree
+ *
+ * \param p_tree struct btree pointer
+ * \param pf_func callback used for each node
+ */
 void
 btree_foreach_infix(ps_btree p_tree, p_func_btree_for_each pf_func) {
     if ( p_tree != NULL && p_tree->p_node_root != NULL ) {
@@ -374,6 +442,13 @@ btree_foreach_infix(ps_btree p_tree, p_func_btree_for_each pf_func) {
     }
 }
 
+/**
+ * \fn btree_foreach_prefix(ps_btree p_tree, p_func_btree_for_each pf_func)
+ * \brief prefixed path of a tree
+ *
+ * \param p_tree struct btree pointer
+ * \param pf_func callback used for each node
+ */
 void
 btree_foreach_prefix(ps_btree p_tree, p_func_btree_for_each pf_func) {
     if ( p_tree != NULL && p_tree->p_node_root != NULL ) {
@@ -381,6 +456,13 @@ btree_foreach_prefix(ps_btree p_tree, p_func_btree_for_each pf_func) {
     }
 }
 
+/**
+ * \fn btree_foreach_postfix(ps_btree p_tree, p_func_btree_for_each pf_func)
+ * \brief postfixed path of a tree
+ *
+ * \param p_tree struct btree pointer
+ * \param pf_func callback used for each node
+ */
 void
 btree_foreach_postfix(ps_btree p_tree, p_func_btree_for_each pf_func) {
     if ( p_tree != NULL && p_tree->p_node_root != NULL ) {
@@ -388,6 +470,15 @@ btree_foreach_postfix(ps_btree p_tree, p_func_btree_for_each pf_func) {
     }
 }
 
+/**
+ * \fn btree_foreach_infix_with_parameter(ps_btree p_tree, p_func_btree_for_each_with_parameters pf_func, const void* pv_param1, void* pv_param2)
+ * \brief infixed path of a tree, callback use 2 parameters
+ *
+ * \param p_tree struct btree pointer
+ * \param pf_func callback used for each node
+ * \param pv_param1 first parameter
+ * \param pv_param2 second parameter
+ */
 void
 btree_foreach_infix_with_parameter(ps_btree p_tree, p_func_btree_for_each_with_parameters pf_func, const void* pv_param1, void* pv_param2) {
     if ( p_tree != NULL && p_tree->p_node_root != NULL ) {
@@ -395,6 +486,15 @@ btree_foreach_infix_with_parameter(ps_btree p_tree, p_func_btree_for_each_with_p
     }
 }
 
+/**
+ * \fn btree_foreach_prefix_with_parameter(ps_btree p_tree, p_func_btree_for_each_with_parameters pf_func, const void* pv_param1, void* pv_param2)
+ * \brief prefixed path of a tree, callback use 2 parameters
+ *
+ * \param p_tree struct btree pointer
+ * \param pf_func callback used for each node
+ * \param pv_param1 first parameter
+ * \param pv_param2 second parameter
+ */
 void
 btree_foreach_prefix_with_parameter(ps_btree p_tree, p_func_btree_for_each_with_parameters pf_func, const void* pv_param1, void* pv_param2) {
     if ( p_tree != NULL && p_tree->p_node_root != NULL ) {
@@ -402,6 +502,15 @@ btree_foreach_prefix_with_parameter(ps_btree p_tree, p_func_btree_for_each_with_
     }
 }
 
+/**
+ * \fn btree_foreach_postfix_with_parameter(ps_btree p_tree, p_func_btree_for_each_with_parameters pf_func, const void* pv_param1, void* pv_param2)
+ * \brief postfixed path of a tree, callback use 2 parameters
+ *
+ * \param p_tree struct btree pointer
+ * \param pf_func callback used for each node
+ * \param pv_param1 first parameter
+ * \param pv_param2 second parameter
+ */
 void
 btree_foreach_postfix_with_parameter(ps_btree p_tree, p_func_btree_for_each_with_parameters pf_func, const void* pv_param1, void* pv_param2) {
     if ( p_tree != NULL && p_tree->p_node_root != NULL ) {
@@ -409,6 +518,15 @@ btree_foreach_postfix_with_parameter(ps_btree p_tree, p_func_btree_for_each_with
     }
 }
 
+/**
+ * \fn callback_for_each_with_parameters_rebuilt_vector(const void* pv_key, const void* pv_value, const void* pv_param1, void* pv_param2)
+ * \brief internal function used by rebuild
+ *
+ * \param pv_key pointer to key
+ * \param pv_value pointer to value
+ * \param pv_param1 first parameter
+ * \param pv_param2 second parameter
+ */
 static void
 callback_for_each_with_parameters_rebuilt_vector(const void* pv_key, const void* pv_value, const void* pv_param1, void* pv_param2) {
 #pragma GCC diagnostic push
@@ -421,6 +539,13 @@ callback_for_each_with_parameters_rebuilt_vector(const void* pv_key, const void*
     vector_add_element(p_vector, p_kv);
 }
 
+/**
+ * \fn callback_for_each_vector_free(unsigned int index, const void* pv_value)
+ * \brief internal function used by rebuild
+ *
+ * \param index not used
+ * \param pv_value pointer to value
+ */
 static void
 callback_for_each_vector_free(unsigned int index, const void* pv_value) {
 #pragma GCC diagnostic push
@@ -430,6 +555,13 @@ callback_for_each_vector_free(unsigned int index, const void* pv_value) {
     free(p_kv);
 }
 
+/**
+ * \fn btree_rebuild(ps_btree p_tree_old, ps_btree p_tree_new)
+ * \brief rebuilds the tree into a perfectly balanced version
+ *
+ * \param p_tree_old pointer to old btree
+ * \param p_tree_new pointer to new btree
+ */
 void
 btree_rebuild(ps_btree p_tree_old, ps_btree p_tree_new) {
     s_vector        v_of_kv ;
@@ -441,6 +573,15 @@ btree_rebuild(ps_btree p_tree_old, ps_btree p_tree_new) {
     vector_free(&v_of_kv);
 }
 
+/**
+ * \fn btree_rebuild_with_pivot(ps_btree p_tree, ps_vector p_vector_of_kv, int index_min, int index_max)
+ * \brief internal function used by rebuild
+ *
+ * \param p_tree new builded btree
+ * \param p_vector_of_kv vector of key/value
+ * \param index_min min index
+ * \param index_max max index
+ */
 static void
 btree_rebuild_with_pivot(ps_btree p_tree, ps_vector p_vector_of_kv, int index_min, int index_max) {
     ps_kv p_kv ;
@@ -469,6 +610,15 @@ btree_rebuild_with_pivot(ps_btree p_tree, ps_vector p_vector_of_kv, int index_mi
     }    
 }
 
+/**
+ * \fn btree_check_integrity(ps_btree p_tree, ps_tree_node p_node, p_func_key_to_string_psz pf_key_string, p_func_value_to_string_psz pf_value_string)
+ * \brief internal debug function
+ *
+ * \param p_tree btree
+ * \param p_node current node
+ * \param pf_key_string callback used to convert key to string
+ * \param pf_value_string callback used to convert value to string
+ */
 void    btree_check_integrity(ps_btree                     p_tree,
                               ps_tree_node                 p_node,
                               p_func_key_to_string_psz     pf_key_string,
@@ -527,8 +677,14 @@ void    btree_check_integrity(ps_btree                     p_tree,
     }    
 }
 
-/* 
- * static utilities
+/**
+ * \fn node_alloc_init(ps_tree_node p_parent, void* pv_key, void* pv_value)
+ * \brief internal function used to allocate a new node
+ *
+ * \param p_parent parent node
+ * \param pv_key new key 
+ * \param pv_value new value
+ * \return allocated tree_node
  */
 static ps_tree_node
 node_alloc_init(ps_tree_node p_parent, void* pv_key, void* pv_value) {
@@ -540,6 +696,15 @@ node_alloc_init(ps_tree_node p_parent, void* pv_key, void* pv_value) {
     return p_new_node ;
 }
 
+/**
+ * \fn btree_search_parent(ps_btree p_tree, ps_tree_node p_node, void* pv_key)
+ * \brief internal function used to find parent node
+ *
+ * \param p_tree btree 
+ * \param p_node current node
+ * \param pv_key pointer to key
+ * \return found parent tree_node
+ */
 static ps_tree_node
 btree_search_parent(ps_btree p_tree, ps_tree_node p_node, void* pv_key) {
     int i_cmp = p_tree->pf_comp(pv_key, p_node->pv_key) ;
@@ -558,6 +723,15 @@ btree_search_parent(ps_btree p_tree, ps_tree_node p_node, void* pv_key) {
     }
 }
 
+/**
+ * \fn btree_search_key(ps_btree p_tree, ps_tree_node p_node, void* pv_key)
+ * \brief internal function used to find a key
+ *
+ * \param p_tree btree 
+ * \param p_node current node
+ * \param pv_key pointer to key
+ * \return found tree_node, NULL if not found
+ */
 static ps_tree_node
 btree_search_key(ps_btree p_tree, ps_tree_node p_node, void* pv_key) {
     int i_cmp = p_tree->pf_comp(pv_key, p_node->pv_key) ;
@@ -575,6 +749,12 @@ btree_search_key(ps_btree p_tree, ps_tree_node p_node, void* pv_key) {
     
 }
 
+/**
+ * \fn btree_node_free(ps_tree_node p_node)
+ * \brief internal function used to free a node
+ *
+ * \param p_node current node
+ */
 static void
 btree_node_free(ps_tree_node p_node) {
     if ( p_node->p_node_left != NULL ) {
@@ -588,6 +768,14 @@ btree_node_free(ps_tree_node p_node) {
     free(p_node);
 }
 
+/**
+ * \fn btree_node_foreach_infix(ps_btree p_tree, ps_tree_node p_node, p_func_btree_for_each pf_func)
+ * \brief infixed path of a tree, internal function 
+ *
+ * \param p_tree struct btree pointer
+ * \param p_node current node
+ * \param pf_func callback used for each node
+ */
 static void
 btree_node_foreach_infix(ps_btree p_tree, ps_tree_node p_node, p_func_btree_for_each pf_func) {
     if ( p_node == NULL ) {
@@ -598,6 +786,14 @@ btree_node_foreach_infix(ps_btree p_tree, ps_tree_node p_node, p_func_btree_for_
     btree_node_foreach_infix(p_tree, p_node->p_node_right, pf_func);
 }
 
+/**
+ * \fn btree_node_foreach_prefix(ps_btree p_tree, ps_tree_node p_node, p_func_btree_for_each pf_func)
+ * \brief prefixed path of a tree, internal function 
+ *
+ * \param p_tree struct btree pointer
+ * \param p_node current node
+ * \param pf_func callback used for each node
+ */
 static void
 btree_node_foreach_prefix(ps_btree p_tree, ps_tree_node p_node, p_func_btree_for_each pf_func) {
     if ( p_node == NULL ) {
@@ -608,6 +804,14 @@ btree_node_foreach_prefix(ps_btree p_tree, ps_tree_node p_node, p_func_btree_for
     btree_node_foreach_prefix(p_tree, p_node->p_node_right, pf_func);
 }
 
+/**
+ * \fn btree_node_foreach_postfix(ps_btree p_tree, ps_tree_node p_node, p_func_btree_for_each pf_func)
+ * \brief postfixed path of a tree, internal function 
+ *
+ * \param p_tree struct btree pointer
+ * \param p_node current node
+ * \param pf_func callback used for each node
+ */
 static void
 btree_node_foreach_postfix(ps_btree p_tree, ps_tree_node p_node, p_func_btree_for_each pf_func) {
     if ( p_node == NULL ) {
@@ -618,6 +822,16 @@ btree_node_foreach_postfix(ps_btree p_tree, ps_tree_node p_node, p_func_btree_fo
     btree_node_foreach_postfix(p_tree, p_node->p_node_left, pf_func);
 }
 
+/**
+ * \fn btree_node_foreach_infix_with_parameter(ps_btree p_tree, ps_tree_node p_node, p_func_btree_for_each_with_parameters pf_func, const void* pv_param1, void* pv_param2)
+ * \brief infixed path of a tree, callback use 2 parameters, internal function
+ *
+ * \param p_tree struct btree pointer
+ * \param p_node current node
+ * \param pf_func callback used for each node
+ * \param pv_param1 first parameter
+ * \param pv_param2 second parameter
+ */
 static void    btree_node_foreach_infix_with_parameter(ps_btree                                 p_tree,
                                                        ps_tree_node                             p_node,
                                                        p_func_btree_for_each_with_parameters    pf_func,
@@ -631,6 +845,16 @@ static void    btree_node_foreach_infix_with_parameter(ps_btree                 
     btree_node_foreach_infix_with_parameter(p_tree, p_node->p_node_right, pf_func, pv_param1, pv_param2);
 }
 
+/**
+ * \fn btree_node_foreach_prefix_with_parameter(ps_btree p_tree, ps_tree_node p_node, p_func_btree_for_each_with_parameters pf_func, const void* pv_param1, void* pv_param2)
+ * \brief prefixed path of a tree, callback use 2 parameters, internal function
+ *
+ * \param p_tree struct btree pointer
+ * \param p_node current node
+ * \param pf_func callback used for each node
+ * \param pv_param1 first parameter
+ * \param pv_param2 second parameter
+ */
 static void    btree_node_foreach_prefix_with_parameter(ps_btree                                p_tree,
                                                         ps_tree_node                            p_node,
                                                         p_func_btree_for_each_with_parameters   pf_func,
@@ -644,6 +868,16 @@ static void    btree_node_foreach_prefix_with_parameter(ps_btree                
     btree_node_foreach_prefix_with_parameter(p_tree, p_node->p_node_right, pf_func, pv_param1, pv_param2);
 }
 
+/**
+ * \fn btree_node_foreach_postfix_with_parameter(ps_btree p_tree, ps_tree_node p_node, p_func_btree_for_each_with_parameters pf_func, const void* pv_param1, void* pv_param2)
+ * \brief postfixed path of a tree, callback use 2 parameters, internal function
+ *
+ * \param p_tree struct btree pointer
+ * \param p_node current node
+ * \param pf_func callback used for each node
+ * \param pv_param1 first parameter
+ * \param pv_param2 second parameter
+ */
 static void    btree_node_foreach_postfix_with_parameter(ps_btree                               p_tree,
                                                          ps_tree_node                           p_node,
                                                          p_func_btree_for_each_with_parameters  pf_func,
