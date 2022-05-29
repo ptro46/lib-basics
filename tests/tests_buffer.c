@@ -50,7 +50,3 @@ void     test_buffer(void) {
     buffer_free(&buf3);
     free(p_buf);
 }
-
-void    buffer_dump(ps_buffer p_buffer) {
-    printf("buffer:data(%p) offset(%zu) length(%zu)\n\t%s\n",p_buffer->data, p_buffer->offset, p_buffer->length, (char*)p_buffer->data);
-}

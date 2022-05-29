@@ -62,6 +62,7 @@ void    test_vector_struct(void);
 
 //************
 // stack_string
+void    stack_string_dump(unsigned int, const void*);
 void    test_stack_string(void);
 void    test_stack_copy(void);
 // stack_string
@@ -77,6 +78,7 @@ void    test_stack_struct(void);
 
 //************
 // hashtable_string
+void    vector_dump_string(unsigned int index, const void* pv_values) ;
 void    test_hashtable_string_string(void);
 bool    hashtable_key_string_compare(const void* pv_data1, const void* pv_data2);
 
@@ -107,7 +109,22 @@ void    test_btree_int_cell_remove(void);
 void    test_btree_int_cell_remove_big(void);
 void    test_btree_int_cell_rebuild(void);
 void    test_btree_rebuild(void);
-// hashtable_struct
+
+int    btree_key_struct_int_compare(const void* pv_data1, const void* pv_data2) ;
+void   key_to_string(const void* pv_key, ps_buffer p_buffer);
+void   value_to_string(const void* pv_value, ps_buffer p_buffer);
+
+void   key_to_string_psz(const void* pv_key, char* p_buffer);
+void   value_to_string_psz(const void* pv_value, char* p_buffer);
+
+void   callback_for_each(const void* pv_key, const void* pv_value);
+void   callback_for_each_with_parameters_list(const void* pv_key, const void* pv_value, const void* pv_param1, void* pv_param2);
+void   callback_for_each_with_parameters_hashtable(const void* pv_key, const void* pv_value, const void* pv_param1, void* pv_param2);
+void   callback_for_each_with_parameters_vector(const void* pv_key, const void* pv_value, const void* pv_param1, void* pv_param2);
+
+bool verify_list_order(ps_list p_list) ;
+void prepare_load_datas(int size_of_sample, ps_h_int* p_ar_indexes, ps_data_cell* p_ar_cells, ps_h_int* p_ar_key_remove) ;
+// btree_struct
 //************
 
 
