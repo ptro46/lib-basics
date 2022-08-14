@@ -25,6 +25,7 @@ int main(int argc, char** argv) {
     test_btree_int_cell_remove_big();
     test_btree_int_cell_rebuild();
     test_btree_rebuild();
+    test_console();
     return 0;
 }
 
