@@ -127,6 +127,12 @@ void prepare_load_datas(int size_of_sample, ps_h_int* p_ar_indexes, ps_data_cell
 // btree_struct
 //************
 
+//************
+// btree_struct
+void   test_console(void);
+// btree_struct
+//************
+
 
 #endif /* __TESTS_H__ */
 

@@ -1,3 +1,4 @@
+
 /**
  * \file console.h
  * \brief function to interact with console outputs
@@ -11,32 +12,32 @@
 #include <stdarg.h>
 #include <stdlib.h>
 
-#define FG_BLACK        0x0001
-#define FG_RED          0x0002
-#define FG_GREEN        0x0003
-#define FG_YELLOW       0x0004
-#define FG_BLUE         0x0005
-#define FG_MAGENTA      0x0006
-#define FG_CYAN         0x0007
-#define FG_WHITE        0x0008
+#define FG_BLACK        0x00000001
+#define FG_RED          0x00000002
+#define FG_GREEN        0x00000004
+#define FG_YELLOW       0x00000008
+#define FG_BLUE         0x00000010
+#define FG_MAGENTA      0x00000020
+#define FG_CYAN         0x00000040
+#define FG_WHITE        0x00000080
 
-#define BG_BLACK        0x0010
-#define BG_RED          0x0020
-#define BG_GREEN        0x0030
-#define BG_YELLOW       0x0040
-#define BG_BLUE         0x0050
-#define BG_MAGENTA      0x0060
-#define BG_CYAN         0x0070
-#define BG_WHITE        0x0080
+#define BG_BLACK        0x00000100
+#define BG_RED          0x00000200
+#define BG_GREEN        0x00000400
+#define BG_YELLOW       0x00000800
+#define BG_BLUE         0x00001000
+#define BG_MAGENTA      0x00002000
+#define BG_CYAN         0x00004000
+#define BG_WHITE        0x00008000
 
-#define RESET           0x0100
-#define BOLD            0x0200
-#define UNDERLINE       0x0300
-#define INVERSE         0x0400
+#define RESET           0x00010000
+#define BOLD            0x00020000
+#define UNDERLINE       0x00040000
+#define INVERSE         0x00080000
 
-#define BOLD_OFF        0x0200
-#define UNDERLINE_OFF   0x0300
-#define INVERSE_OFF     0x0400
+#define BOLD_OFF        0x00100000
+#define UNDERLINE_OFF   0x00200000
+#define INVERSE_OFF     0x00400000
 
 void color_print(unsigned int color, const char* fmt, ...);
 void color_set(unsigned int color);

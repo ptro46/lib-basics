@@ -38,12 +38,14 @@ void color_print_f(unsigned int color, const char* fmt, va_list args) {
     printf("\033[0m");
 }
 
-#define APPEND_COLOR(opcode, with_semilicon, withou_semilicon) \
-    if ( color && opcode ) { \
+#define APPEND_COLOR(opcode, with_semilicon, without_semilicon) \
+    if ( color & opcode ) { \
         if ( wait_semilicon == true ) { \
             strcat(color_str,with_semilicon); \
+            strcat(color_debug,with_semilicon); \
         } else { \
-            strcat(color_str,withou_semilicon); \
+            strcat(color_str,without_semilicon); \
+            strcat(color_debug,without_semilicon); \
         } \
         wait_semilicon = true; \
     } \
@@ -51,9 +53,10 @@ void color_print_f(unsigned int color, const char* fmt, va_list args) {
 
 static
 void color_string(unsigned int color, char* color_str) {
+    char color_debug[256];
     bool wait_semilicon = false ;
     strcpy(color_str, "\033[");
-
+    strcpy(color_debug, "");
 
     APPEND_COLOR(BOLD, ";1", "1") ;
     APPEND_COLOR(UNDERLINE, ";4", "4") ;    
@@ -78,4 +81,6 @@ void color_string(unsigned int color, char* color_str) {
     APPEND_COLOR(BG_WHITE, ";47", "47");
 
     strcat(color_str, "m");
+    strcat(color_debug, "m");
+//    printf("0x%08x/%s",color,color_debug);
 }
