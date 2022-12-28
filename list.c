@@ -7,6 +7,7 @@
  */
 
 #include <stdlib.h>
+#include <string.h>
 #include "list.h"
 #include "vector.h"
 
@@ -453,3 +454,34 @@ list_get_prev(ps_list        p_list,
     return NULL ;
 }
 
+/**
+ * \fn file_buffer_lines_to_list(ps_buffer p_buf_in, ps_list p_list)
+ * \brief return each buffer line in list element of ps_buffer
+ *
+ * \param ps_buffer p_buf_in pointer to input buffer
+ * \param p_list pointer to the struct s_list
+ */
+void
+file_buffer_lines_to_list(ps_buffer p_buf_in, ps_list p_list) {
+    s_buffer buf_wotk ;
+    char*    pstr;
+
+    buffer_init(&buf_wotk, p_buf_in->offset+1);
+    buffer_append_buffer(&buf_wotk, p_buf_in);
+    pstr = buffer_stringify(&buf_wotk);
+    char* p_str = strdup(pstr);
+    char* p_to_free = p_str ;
+    char* p_token = NULL ;
+    p_token = strsep(&p_str, "\n");
+    while( p_token != NULL ) {
+        size_t size_of_line = strlen(p_token) ;
+        ps_buffer p_buf_line = calloc(1,sizeof(s_buffer));
+        buffer_init(p_buf_line, size_of_line);
+        buffer_append(p_buf_line, p_token, size_of_line);
+        list_add(p_list, p_buf_line);
+        p_token = strsep(&p_str, "\n");
+    }
+    free(p_to_free);
+    buffer_free(&buf_wotk);
+    
+}

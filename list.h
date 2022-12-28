@@ -10,7 +10,7 @@
 #define __LIST_H__
 
 #include "b_types.h"
-
+#include "buffer.h"
 
 /**
  * \brief forward declaration
@@ -161,5 +161,7 @@ ps_list_data    list_get_first(ps_list   p_list);
 ps_list_data    list_get_last(ps_list    p_list);
 ps_list_data    list_get_next(ps_list    p_list, ps_list_data   p_current);
 ps_list_data    list_get_prev(ps_list    p_list, ps_list_data   p_current);
+
+void   file_buffer_lines_to_list(ps_buffer p_buf_in, ps_list p_list);
 
 #endif /* __LIST_H__ */

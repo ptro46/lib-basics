@@ -45,6 +45,14 @@ void    vector_cell_dump(unsigned int i, const void* pv_data) ;
 //************
 
 //************
+// list_file_lines
+void    list_buffer_free(const void*);
+void    list_buffer_dump(const void*);
+void    test_list_read_lines(void);
+// list_file_lines
+//************
+
+//************
 // vector_string
 void    vector_string_dump(unsigned int i, const void* pv_data);
 int     vector_string_compare(const void* pv_data1, const void* pv_data2);
@@ -109,7 +117,9 @@ void    test_btree_int_cell_remove(void);
 void    test_btree_int_cell_remove_big(void);
 void    test_btree_int_cell_rebuild(void);
 void    test_btree_rebuild(void);
+void    test_btree_string_list(void);
 
+int    btree_key_string_compare(const void* pv_data1, const void* pv_data2) ;
 int    btree_key_struct_int_compare(const void* pv_data1, const void* pv_data2) ;
 void   key_to_string(const void* pv_key, ps_buffer p_buffer);
 void   value_to_string(const void* pv_value, ps_buffer p_buffer);
@@ -128,9 +138,9 @@ void prepare_load_datas(int size_of_sample, ps_h_int* p_ar_indexes, ps_data_cell
 //************
 
 //************
-// btree_struct
+// console
 void   test_console(void);
-// btree_struct
+// console
 //************
 
 

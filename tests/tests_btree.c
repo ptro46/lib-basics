@@ -593,3 +593,86 @@ void    test_btree_int_cell_rebuild(void) {
     vector_free(&v_of_kv);
     btree_free(&tree_int_cell);
 }
+
+
+void
+test_btree_string_list(void) {
+    s_btree      tree_string_list ;
+    /*
+    char*       datas[] = {
+        "tonino",
+        "asdasd",
+        "kamil5",
+        "omar123",
+        "147258",
+        "summer",
+        "password",
+        "slavik007",
+        "GAETANO",
+        "qazwsxqaz",
+        "bigclub",
+        "Tomekryb2005",
+        "122333",
+        "boyfat",
+        "marlboro1",
+        "1652002",
+        "walczak1",
+        "v223hq",
+        "19051974",
+        "helpme",
+        "ccih713579",
+        "987654321",
+        "kereszt",
+        "menex111",
+        "123456789as",
+        "benten",
+        "conrow24",
+        "skoets",
+        "qwerty",
+        "diesel",
+        "11720002",
+        "12345678",
+        "620bC1",
+        "philipp10",
+        "vlees",
+        "jogobella",
+        "fofademais",
+        "alfarojo",
+        "chuky",
+        "1011182",
+        "nikko2004",
+        "dozerthomas22",
+        "jo69jo",
+        "96792ass",
+        "BUBBA1234",
+        "ameenata14",
+        "Goose12345",
+        "iown2much",
+        "Abb448709",
+        "daddyd",
+        "147852369",
+        "Johanateamo",
+        "03258566",
+        "osek123",
+        "gageman",
+        "JANATA1234",
+        "1qazzaq1",
+        "roop294",
+        "juventus",
+        "password",
+        "cqqyrfr",
+        "looser97",
+        "brains",
+        "scream69",
+        "hovnokleslo2",
+        "123456123456",
+        "walczak",
+        "mentik",
+        "calimero" } ;
+    */    
+
+    btree_init(&tree_string_list, btree_key_string_compare);
+    
+    btree_free(&tree_string_list);
+}
+

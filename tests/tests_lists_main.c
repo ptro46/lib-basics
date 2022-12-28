@@ -9,6 +9,7 @@ int main(int argc, char** argv) {
     test_list_sorted();
     test_list_data_sorted();
     test_list_copy();
+    test_list_read_lines();
     return 0;
 }
 

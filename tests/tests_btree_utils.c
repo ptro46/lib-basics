@@ -18,6 +18,23 @@ int    btree_key_struct_int_compare(const void* pv_data1, const void* pv_data2) 
     return p_key_int_1->idx - p_key_int_2->idx ;
 }
 
+int
+btree_key_string_compare(const void* pv_data1, const void* pv_data2) {
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wcast-qual"
+    ps_buffer p_key_buf_1 = (ps_buffer)pv_data1 ;
+    ps_buffer p_key_buf_2 = (ps_buffer)pv_data2;
+#pragma GCC diagnostic pop
+    if ( p_key_buf_1->offset == p_key_buf_2->offset ) {
+        return memcmp(p_key_buf_1->data, p_key_buf_2->data, p_key_buf_1->offset);
+    }
+    if ( p_key_buf_1->offset < p_key_buf_2->offset ) {
+        return memcmp(p_key_buf_1->data, p_key_buf_2->data, p_key_buf_1->offset);
+    }
+    return memcmp(p_key_buf_1->data, p_key_buf_2->data, p_key_buf_2->offset);
+}
+
+
 void   key_to_string(const void* pv_key, ps_buffer p_buffer) {
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wcast-qual"

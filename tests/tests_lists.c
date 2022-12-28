@@ -256,3 +256,51 @@ void     test_list(void) {
 
     list_free(&list_of_strings);
 }
+
+void     list_buffer_free(const void* pv_data) {
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wcast-qual"
+    free((void*)pv_data);
+#pragma GCC diagnostic pop
+}
+
+void     list_buffer_dump(const void* pv_data) {
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wcast-qual"
+    const ps_buffer p_buffer = (const ps_buffer)pv_data;
+#pragma GCC diagnostic pop
+    printf("\t[%.*s]\n",(int)p_buffer->offset, (char*)p_buffer->data);
+}
+
+void    test_list_read_lines(void) {
+    char* line1 = "tag1:file1,file1,file3\n";
+    char* line2 = "tag2:file4,file5,file5\n";
+    char* line3 = "tag3:file7,file7\n";
+    char* line4 = "tag4:file9\n";
+    char* line5 = "tag5:file10,file11\n";
+    char* line6 = "tag6:file12,file13,file14\n";
+    char* line7 = "tag7:lastline";
+
+    s_list list_lines;
+    s_buffer buf_file;
+
+    printf("test_list_read_lines\n");
+
+    list_init(&list_lines,false,NULL);
+    buffer_init(&buf_file, 1024);
+
+    buffer_append(&buf_file, line1, strlen(line1));
+    buffer_append(&buf_file, line2, strlen(line2));
+    buffer_append(&buf_file, line3, strlen(line3));
+    buffer_append(&buf_file, line4, strlen(line4));
+    buffer_append(&buf_file, line5, strlen(line5));
+    buffer_append(&buf_file, line6, strlen(line6));
+    buffer_append(&buf_file, line7, strlen(line7));
+
+    file_buffer_lines_to_list(&buf_file, &list_lines);
+    list_for_each(&list_lines, list_buffer_dump);
+    
+    list_for_each(&list_lines, list_buffer_free);
+    buffer_free(&buf_file);
+    list_free(&list_lines);
+}
