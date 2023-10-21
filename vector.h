@@ -79,6 +79,7 @@ void            vector_to_list(ps_vector p_vector, ps_list p_list);
 void            vector_add_element(ps_vector p_vector, void* pv_data);
 void            vector_set_element_at(ps_vector p_vector, void* pv_data, unsigned int at);
 void            vector_insert_element_at(ps_vector p_vector, void* pv_data, unsigned int at);
+void            vector_add_vector(ps_vector p_vector_from, ps_vector p_vector_to);
 
 void            vector_remove_element_at(ps_vector p_vector, unsigned int at);
 void            vector_remove_element(ps_vector p_vector, void* pv_data, p_func_vector_compare pf_func);

@@ -9,9 +9,9 @@ LIBS	= -ljson-c -lcurl
 
 .SUFFIXES:	.o .c
 
-HEADERS = b_types.h buffer.h curl.h hashtable.h list.h stack.h strl.h vector.h btree.h console.h 
-SOURCES = strl.c buffer.c curl.c list.c stack.c vector.c hashtable.c btree.c console.c 
-OBJECTS = strl.o buffer.o curl.o list.o stack.o vector.o hashtable.o btree.o console.o 
+HEADERS = b_types.h buffer.h curl.h hashtable.h list.h stack.h strl.h vector.h btree.h console.h stl.h
+SOURCES = strl.c buffer.c curl.c list.c stack.c vector.c hashtable.c btree.c console.c stl.c
+OBJECTS = strl.o buffer.o curl.o list.o stack.o vector.o hashtable.o btree.o console.o stl.o
 
 TARGET	    = libbasics.a
 

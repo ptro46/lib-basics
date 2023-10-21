@@ -7,6 +7,7 @@
  */
 
 #include <stdlib.h>
+#include <string.h>
 #include "vector.h"
 #include "list.h"
 
@@ -142,6 +143,30 @@ vector_insert_element_at(ps_vector p_vector, void* pv_data, unsigned int at) {
         }
         p_vector->nb_elements++;
         p_vector->array_of_pv_data[at] = pv_data ;
+    }
+}
+
+/**
+ * \fn vector_add_vector(ps_vector p_vector_from, ps_vector p_vector_to)
+ * \brief append a vector to another vector
+ *
+ * \param p_vector_from pointer to the struct s_vector contains source datas
+ * \param p_vector_to pointer to the struct s_vector contains destination datas
+ */
+void
+vector_add_vector(ps_vector p_vector_from, ps_vector p_vector_to) {
+    if ( p_vector_from != NULL &&
+         p_vector_from->array_of_pv_data != NULL &&
+         p_vector_to != NULL ) {
+        if ( p_vector_to->array_of_pv_data == NULL ) {
+            vector_init(p_vector_to, p_vector_from->capacity);
+        } else {
+            p_vector_to->capacity = p_vector_to->capacity + p_vector_from->capacity ;
+            p_vector_to->array_of_pv_data = realloc(p_vector_to->array_of_pv_data, p_vector_to->capacity * sizeof(void*));
+        }
+        for(unsigned int i=0; i<p_vector_from->nb_elements; i++) {
+            vector_add_element(p_vector_to, p_vector_from->array_of_pv_data[i]);
+        }        
     }
 }
 

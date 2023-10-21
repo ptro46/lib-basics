@@ -473,7 +473,7 @@ file_buffer_lines_to_list(ps_buffer p_buf_in, ps_list p_list) {
     char* p_to_free = p_str ;
     char* p_token = NULL ;
     p_token = strsep(&p_str, "\n");
-    while( p_token != NULL ) {
+    while( p_token != NULL && strlen(p_token) > 0 ) {
         size_t size_of_line = strlen(p_token) ;
         ps_buffer p_buf_line = calloc(1,sizeof(s_buffer));
         buffer_init(p_buf_line, size_of_line);

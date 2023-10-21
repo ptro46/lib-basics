@@ -159,3 +159,60 @@ void    test_vector_struct(void) {
     vector_free(&v_copy);
     list_free(&l_copy);
 }
+
+void    test_vector_struct_add_vector(void) {
+    s_data_cell    cells_1[] = {
+        { 1 , "UN" } ,
+        { 2 , "DEUX" } ,
+        { 3 , "TROIS" } ,
+        { 4 , "QUATRE" } ,
+        { 5 , "CINQ" } ,
+        { 6 , "SIX" } ,
+        { 7 , "SEPT" } ,
+        { 8 , "HUIT" } ,
+        { 9 , "NEUF" } ,
+        { 10 , "DIX" }
+    } ;
+
+    s_data_cell    cells_2[] = {
+        { 11 , "ONE" } ,
+        { 12 , "DOUZE" } ,
+        { 13 , "TREIZE" } ,
+        { 14 , "QUATORZE" } ,
+        { 15 , "QUINZE" } ,
+        { 16 , "SEIZE" } ,
+        { 17 , "DIX-SEPT" } ,
+        { 18 , "DIX-HUIT" } ,
+        { 19 , "DIX-NEUF" } ,
+        { 20 , "VINGT" }
+    } ;
+
+    s_vector    vector_1 ;
+    s_vector    vector_2 ;
+
+    vector_init(&vector_1, 8);
+    int nb_elems = sizeof(cells_1) / sizeof(s_data_cell) ;
+    for(int i=0;i<nb_elems;i++) {
+        vector_add_element(&vector_1, &cells_1[i]);
+    }
+
+    vector_init(&vector_2, 8);
+    nb_elems = sizeof(cells_2) / sizeof(s_data_cell) ;
+    for(int i=0;i<nb_elems;i++) {
+        vector_add_element(&vector_2, &cells_2[i]);
+    }
+
+    printf("vector_1, capacity(%u) nb_elements(%u)\n",vector_1.capacity, vector_1.nb_elements);
+    vector_for_each(&vector_1, vector_data_cell_dump);
+
+    printf("vector_2, capacity(%u) nb_elements(%u)\n",vector_2.capacity, vector_2.nb_elements);
+    vector_for_each(&vector_2, vector_data_cell_dump);
+
+    vector_add_vector(&vector_2, &vector_1);
+
+    printf("after add vector vector_1, capacity(%u) nb_elements(%u)\n",vector_1.capacity, vector_1.nb_elements);
+    vector_for_each(&vector_1, vector_data_cell_dump);
+
+    vector_free(&vector_1);
+    vector_free(&vector_2);
+}

@@ -65,6 +65,7 @@ void    test_vector_copy(void);
 // vector_struct
 void    vector_data_cell_dump(unsigned int, const void*);
 void    test_vector_struct(void);
+void    test_vector_struct_add_vector(void);
 // vector_struct
 //************
 
