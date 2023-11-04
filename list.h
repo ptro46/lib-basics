@@ -129,6 +129,9 @@ void   list_to_vector(ps_list p_list, ps_vector p_vector);
 int    list_add(ps_list   p_list,
                 void*     pv_data);
 
+void   internal_remove_element(ps_list         p_list,
+                               ps_list_data    p_current) ;
+
 int    list_remove_at(ps_list         p_list,
                       unsigned int    index);
 int    list_remove_element(ps_list              p_list,

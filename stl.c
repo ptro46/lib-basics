@@ -26,6 +26,10 @@ void    read_stl(const char* filename, ps_stl p_stl) {
     }
 }
 
+void    free_stl(ps_stl p_stl) {
+    vector_free(&p_stl->vector_of_triangles);
+}
+
 void    dump_stl(ps_stl p_stl) {
     printf("header : [%s]\n",p_stl->header.header);
     printf("number of triangles : %d\n",p_stl->number_of_triangles);

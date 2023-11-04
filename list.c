@@ -160,6 +160,47 @@ list_add(ps_list   p_list,
     return 0;
 }
 
+void internal_remove_element(ps_list         p_list,
+                             ps_list_data    p_current) {
+    if ( p_current == p_list->p_last ) {
+        if ( p_list-> count == 1 ) {
+            p_list->p_first = NULL ;
+            p_list->p_last = NULL ;
+            p_list->count = 0 ;                    
+            free(p_current);
+                    
+        } else {
+            ps_list_data p_prev = p_current->p_prev ;
+            p_prev->p_next = NULL ;
+            p_list->p_last = p_prev;
+            free(p_current);
+            p_list->count--;
+                    
+        }
+    } else if ( p_current == p_list->p_first ) {
+        if ( p_list-> count == 1 ) {
+            p_list->p_first = NULL ;
+            p_list->p_last = NULL ;
+            p_list->count = 0 ;                    
+            free(p_current);
+                    
+        } else {
+            ps_list_data p_next = p_current->p_next ;
+            p_list->p_first = p_next ;
+            free(p_current);
+            p_list->count--;
+                    
+        }
+                
+    } else {
+        ps_list_data p_prev = p_current->p_prev ;
+        ps_list_data p_next = p_current->p_next ;
+        p_prev->p_next = p_next ;
+        p_next->p_prev = p_prev ;
+        free(p_current);
+        p_list->count--;
+    }    
+}
 
 /**
  * \fn list_remove_at(ps_list p_list, unsigned int index)
@@ -181,12 +222,7 @@ list_remove_at(ps_list         p_list,
                 count++;
             }
             if ( count == index && p_current != NULL ) {
-                ps_list_data p_prev = p_current->p_prev ;
-                ps_list_data p_next = p_current->p_next ;
-                p_prev->p_next = p_next ;
-                p_next->p_prev = p_prev ;
-                free(p_current);
-                p_list->count--;
+                internal_remove_element(p_list, p_current);
             }
         }
     }
@@ -225,12 +261,7 @@ list_remove_element(ps_list              p_list,
             p_current = p_current->p_next;
         }
         if ( p_current != NULL ) {
-            ps_list_data p_prev = p_current->p_prev ;
-            ps_list_data p_next = p_current->p_next ;
-            p_prev->p_next = p_next ;
-            p_next->p_prev = p_prev ;
-            free(p_current);
-            p_list->count--;
+            internal_remove_element(p_list, p_current);
         }
     }
     return p_list->count;

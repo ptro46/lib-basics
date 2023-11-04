@@ -19,6 +19,12 @@ void    debug_list(ps_list p_list);
 // list_string
 void    test_list(void) ;
 void    test_list_bounds(void);
+void    test_list_remove_bounds_1(void);
+void    test_list_remove_bounds_2(void);
+void    test_list_remove_bounds_3(void);
+void    test_list_remove_bounds_4(void);
+void    test_list_remove_bounds_5(void);
+void    test_list_remove_bounds_6(void);
 void    test_list_sorted(void);
 
 void    list_string_dump(const void*);

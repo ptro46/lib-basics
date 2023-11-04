@@ -127,6 +127,8 @@ void    test_list_sorted(void) {
     list_free(&list_of_strings);
 }
 
+
+
 void    test_list_bounds(void) {
     char*    words[] = {
         "123456",        /* 00 */
@@ -182,7 +184,210 @@ void    test_list_bounds(void) {
     list_for_each(&list_of_strings, list_string_dump);
 
     list_free(&list_of_strings);
+}
 
+void    test_list_remove_bounds_1(void) {
+    char*    words[] = {
+        "password",      /* 00 */
+        "rockyou",       /* 01 */
+        "nicole"         /* 02 */
+    } ;
+
+    s_list    list_of_strings;
+
+    list_init(&list_of_strings, false, NULL);
+
+    int nb_elems = sizeof(words) / sizeof(char*) ;
+    for(int i=0;i<nb_elems;i++) {
+        list_add(&list_of_strings, words[i]);
+    }
+
+    printf("list_for_each\n");
+    list_for_each(&list_of_strings, list_string_dump);
+
+    printf("list_remove_element nicole\n");
+    list_remove_element(&list_of_strings, "nicole", list_string_compare);
+    list_for_each(&list_of_strings, list_string_dump);
+
+    printf("list_remove_element password\n");
+    list_remove_element(&list_of_strings, "password", list_string_compare);
+    list_for_each(&list_of_strings, list_string_dump);
+
+    printf("list_remove_element rockyou\n");
+    list_remove_element(&list_of_strings, "rockyou", list_string_compare);
+    list_for_each(&list_of_strings, list_string_dump);
+
+    list_free(&list_of_strings);
+}
+
+void    test_list_remove_bounds_2(void) {
+    char*    words[] = {
+        "password",      /* 00 */
+        "rockyou",       /* 01 */
+        "nicole"         /* 02 */
+    } ;
+
+    s_list    list_of_strings;
+
+    list_init(&list_of_strings, false, NULL);
+
+    int nb_elems = sizeof(words) / sizeof(char*) ;
+    for(int i=0;i<nb_elems;i++) {
+        list_add(&list_of_strings, words[i]);
+    }
+
+    printf("list_for_each\n");
+    list_for_each(&list_of_strings, list_string_dump);
+
+    printf("list_remove_element nicole\n");
+    list_remove_element(&list_of_strings, "nicole", list_string_compare);
+    list_for_each(&list_of_strings, list_string_dump);
+
+    printf("list_remove_element rockyou\n");
+    list_remove_element(&list_of_strings, "rockyou", list_string_compare);
+    list_for_each(&list_of_strings, list_string_dump);
+
+    printf("list_remove_element password\n");
+    list_remove_element(&list_of_strings, "password", list_string_compare);
+    list_for_each(&list_of_strings, list_string_dump);
+
+    list_free(&list_of_strings);
+}
+
+void    test_list_remove_bounds_3(void) {
+    char*    words[] = {
+        "password",      /* 00 */
+        "rockyou",       /* 01 */
+        "nicole"         /* 02 */
+    } ;
+
+    s_list    list_of_strings;
+
+    list_init(&list_of_strings, false, NULL);
+
+    int nb_elems = sizeof(words) / sizeof(char*) ;
+    for(int i=0;i<nb_elems;i++) {
+        list_add(&list_of_strings, words[i]);
+    }
+
+    printf("list_for_each\n");
+    list_for_each(&list_of_strings, list_string_dump);
+
+    printf("list_remove_element rockyou\n");
+    list_remove_element(&list_of_strings, "rockyou", list_string_compare);
+    list_for_each(&list_of_strings, list_string_dump);
+
+    printf("list_remove_element nicole\n");
+    list_remove_element(&list_of_strings, "nicole", list_string_compare);
+    list_for_each(&list_of_strings, list_string_dump);
+
+    printf("list_remove_element password\n");
+    list_remove_element(&list_of_strings, "password", list_string_compare);
+    list_for_each(&list_of_strings, list_string_dump);
+
+    list_free(&list_of_strings);
+}
+
+void    test_list_remove_bounds_4(void) {
+    char*    words[] = {
+        "password",      /* 00 */
+        "rockyou",       /* 01 */
+        "nicole"         /* 02 */
+    } ;
+
+    s_list    list_of_strings;
+
+    list_init(&list_of_strings, false, NULL);
+
+    int nb_elems = sizeof(words) / sizeof(char*) ;
+    for(int i=0;i<nb_elems;i++) {
+        list_add(&list_of_strings, words[i]);
+    }
+
+    printf("list_for_each\n");
+    list_for_each(&list_of_strings, list_string_dump);
+
+    printf("list_remove_element rockyou\n");
+    list_remove_element(&list_of_strings, "rockyou", list_string_compare);
+    list_for_each(&list_of_strings, list_string_dump);
+
+    printf("list_remove_element password\n");
+    list_remove_element(&list_of_strings, "password", list_string_compare);
+    list_for_each(&list_of_strings, list_string_dump);
+    
+    printf("list_remove_element nicole\n");
+    list_remove_element(&list_of_strings, "nicole", list_string_compare);
+    list_for_each(&list_of_strings, list_string_dump);
+
+    list_free(&list_of_strings);
+}
+
+void    test_list_remove_bounds_5(void) {
+    char*    words[] = {
+        "password",      /* 00 */
+        "rockyou",       /* 01 */
+        "nicole"         /* 02 */
+    } ;
+
+    s_list    list_of_strings;
+
+    list_init(&list_of_strings, false, NULL);
+
+    int nb_elems = sizeof(words) / sizeof(char*) ;
+    for(int i=0;i<nb_elems;i++) {
+        list_add(&list_of_strings, words[i]);
+    }
+
+    printf("list_for_each\n");
+    list_for_each(&list_of_strings, list_string_dump);
+
+    printf("list_remove_element password\n");
+    list_remove_element(&list_of_strings, "password", list_string_compare);
+    list_for_each(&list_of_strings, list_string_dump);
+
+    printf("list_remove_element rockyou\n");
+    list_remove_element(&list_of_strings, "rockyou", list_string_compare);
+    list_for_each(&list_of_strings, list_string_dump);
+    
+    printf("list_remove_element nicole\n");
+    list_remove_element(&list_of_strings, "nicole", list_string_compare);
+    list_for_each(&list_of_strings, list_string_dump);
+
+    list_free(&list_of_strings);
+}
+
+void    test_list_remove_bounds_6(void) {
+    char*    words[] = {
+        "password",      /* 00 */
+        "rockyou",       /* 01 */
+        "nicole"         /* 02 */
+    } ;
+
+    s_list    list_of_strings;
+
+    list_init(&list_of_strings, false, NULL);
+
+    int nb_elems = sizeof(words) / sizeof(char*) ;
+    for(int i=0;i<nb_elems;i++) {
+        list_add(&list_of_strings, words[i]);
+    }
+
+    printf("list_for_each\n");
+    list_for_each(&list_of_strings, list_string_dump);
+
+    printf("list_remove_element password\n");
+    list_remove_element(&list_of_strings, "password", list_string_compare);
+    list_for_each(&list_of_strings, list_string_dump);
+
+    printf("list_remove_element nicole\n");
+    list_remove_element(&list_of_strings, "nicole", list_string_compare);
+    list_for_each(&list_of_strings, list_string_dump);
+
+    printf("list_remove_element rockyou\n");
+    list_remove_element(&list_of_strings, "rockyou", list_string_compare);
+    list_for_each(&list_of_strings, list_string_dump);    
+
+    list_free(&list_of_strings);
 }
 
 void     test_list(void) {

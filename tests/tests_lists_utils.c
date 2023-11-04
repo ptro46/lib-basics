@@ -65,6 +65,6 @@ int     list_string_compare(const void* data1, const void* data2) {
     const char* psz2 = (const char*)data2;
 
     int n = strcmp(psz1, psz2);
-    fprintf(stderr,"%d strcmp(%s,%s)\n",n,psz1, psz2);
+//    fprintf(stderr,"%d strcmp(%s,%s)\n",n,psz1, psz2);
     return n;
 }

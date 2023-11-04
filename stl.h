@@ -45,6 +45,7 @@ typedef struct stl*    ps_stl ;
 
 
 void    read_stl(const char* filename, ps_stl p_stl);
+void    free_stl(ps_stl p_stl);
 void    dump_stl(ps_stl p_stl);
 void    export_to_stl_text(ps_stl p_stl, const char *filename);
 void    export_to_openscad_polyhedron(ps_stl p_stl, const char *filename);
