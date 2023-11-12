@@ -48,7 +48,7 @@ void    export_to_stl_text(ps_stl p_stl, const char *filename) {
     printf("export to %s\n",filename);
     h = fopen(filename,"w");
     if ( h != NULL ) {
-        fprintf(h,"solid Export from stl-2-polyhedron\n");
+        fprintf(h,"solid Exported from Blender-3.2.2\n");
         for(uint32_t i=0; i<p_stl->number_of_triangles; i++) {
             ps_stl_triangle p_triangle = vector_element_at(&(p_stl->vector_of_triangles), i);
             fprintf(h,"facet normal %f %f %f\n",p_triangle->normal_vector.x,p_triangle->normal_vector.y,p_triangle->normal_vector.z);
@@ -59,7 +59,7 @@ void    export_to_stl_text(ps_stl p_stl, const char *filename) {
             fprintf(h,"endloop\n");
             fprintf(h,"endfacet\n");
         }
-        fprintf(h,"endsolid Export from stl-2-polyhedron\n");        
+        fprintf(h,"endsolid Exported from Blender-3.2.2\n");        
         fclose(h);
     }    
 }
@@ -117,5 +117,11 @@ void    export_to_stl_binary(ps_stl p_stl, const char *filename) {
 }
 
 void    stl_add(ps_stl p_stl_1, ps_stl p_stl_2, ps_stl p_stl_to) {
-    
+    printf("\tcopy header\n");
+    memcpy(p_stl_1->header.header, p_stl_to->header.header, sizeof(p_stl_1->header.header));
+    p_stl_to->number_of_triangles = p_stl_1->number_of_triangles + p_stl_2->number_of_triangles ;
+    printf("\tcopy %d triangles\n",p_stl_1->number_of_triangles);
+    vector_copy(&(p_stl_1->vector_of_triangles), &(p_stl_to->vector_of_triangles));
+    printf("\tappend %d triangles\n",p_stl_2->number_of_triangles);
+    vector_add_vector(&(p_stl_2->vector_of_triangles), &(p_stl_to->vector_of_triangles));    
 }
